@@ -1,0 +1,2 @@
+DataraiderMacBuild.app.zip filter=lfs diff=lfs merge=lfs -text
+DataraiderWindowsBuild.zip filter=lfs diff=lfs merge=lfs -text

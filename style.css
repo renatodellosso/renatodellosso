@@ -1,0 +1,35 @@
+.body {
+
+  color: #e7e7de;
+  margin: 0;
+  font-family: monospace;
+  text-align: center;
+}
+
+.intro {
+  background: #0f3057;
+  color: #e7e7de;
+  padding: 35px;
+}
+
+.section1 {
+  background: #00587a;
+  padding: 70px;
+  font-size: 20px;
+}
+
+.gameslist {
+  background: #008891;
+  padding: 50px;
+}
+
+.game {
+  margin: 10px;
+  font-size: 15px;
+  padding: 10px;
+}
+
+.footer {
+  background: #0f3057;
+  padding: 41px;
+}

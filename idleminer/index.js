@@ -77,6 +77,75 @@ let ironMine = {
   }
 }
 
+let silverMine = {
+  name: "Silver Mines",
+  cost: 10000,
+  count: 0,
+  production: 50,
+
+  buy: () => {
+    if (money >= silverMine.cost) {
+      money -= silverMine.cost;
+
+      silverMine.count++;
+      silverMine.cost = Math.round(silverMine.cost * 1.1);
+
+      silverMine.updateButton();
+    }
+  },
+
+  updateButton: () => {
+    let btn = document.getElementById('silverMine');
+    btn.innerHTML = silverMine.count + " " + silverMine.name + " - costs $" + silverMine.cost + ", produces $" + silverMine.production + "/s";
+  }
+}
+
+let tungstenMine = {
+  name: "Tungsten Mines",
+  cost: 45000,
+  count: 0,
+  production: 120,
+
+  buy: () => {
+    if (money >= tungstenMine.cost) {
+      money -= tungstenMine.cost;
+
+      tungstenMine.count++;
+      tungstenMine.cost = Math.round(tungstenMine.cost * 1.1);
+
+      tungstenMine.updateButton();
+    }
+  },
+
+  updateButton: () => {
+    let btn = document.getElementById('tungstenMine');
+    btn.innerHTML = tungstenMine.count + " " + tungstenMine.name + " - costs $" + tungstenMine.cost + ", produces $" + tungstenMine.production + "/s";
+  }
+}
+
+let leadMine = {
+  name: "Lead Mines",
+  cost: 120000,
+  count: 0,
+  production: 300,
+
+  buy: () => {
+    if (money >= leadMine.cost) {
+      money -= leadMine.cost;
+
+      leadMine.count++;
+      leadMine.cost = Math.round(leadMine.cost * 1.1);
+
+      leadMine.updateButton();
+    }
+  },
+
+  updateButton: () => {
+    let btn = document.getElementById('leadMine');
+    btn.innerHTML = leadMine.count + " " + leadMine.name + " - costs $" + leadMine.cost + ", produces $" + leadMine.production + "/s";
+  }
+}
+
 let loadGame = () => {
   let save = JSON.parse(localStorage.getItem("save"));
 
@@ -105,12 +174,33 @@ let loadGame = () => {
     if (typeof save.ironMine.production !== "undefined") ironMine.production = save.ironMine.production;
   }
 
+  if (typeof save.silverMine !== "undefined") {
+    if (typeof save.silverMine.cost !== "undefined") silverMine.cost = save.silverMine.cost;
+    if (typeof save.silverMine.count !== "undefined") silverMine.count = save.silverMine.count;
+    if (typeof save.silverMine.production !== "undefined") silverMine.production = save.silverMine.production;
+  }
+
+  if (typeof save.tungstenMine !== "undefined") {
+    if (typeof save.tungstenMine.cost !== "undefined") tungstenMine.cost = save.tungstenMine.cost;
+    if (typeof save.tungstenMine.count !== "undefined") tungstenMine.count = save.tungstenMine.count;
+    if (typeof save.tungstenMine.production !== "undefined") tungstenMine.production = save.tungstenMine.production;
+  }
+
+  if (typeof save.leadMine !== "undefined") {
+    if (typeof save.leadMine.cost !== "undefined") leadMine.cost = save.leadMine.cost;
+    if (typeof save.leadMine.count !== "undefined") leadMine.count = save.leadMine.count;
+    if (typeof save.leadMine.production !== "undefined") leadMine.production = save.leadMine.production;
+  }
+
   console.log("Loaded game");
   }
 
   quarry.updateButton();
   copperMine.updateButton();
   ironMine.updateButton();
+  silverMine.updateButton();
+  tungstenMine.updateButton();
+  leadMine.updateButton();
 }
 
 loadGame();
@@ -121,6 +211,9 @@ setInterval(() => {
   income += quarry.count * quarry.production;
   income += copperMine.count * copperMine.production;
   income += ironMine.count * ironMine.production;
+  income += silverMine.count * silverMine.production;
+  income += tungstenMine.count * tungstenMine.production;
+  income += leadMine.count * leadMine.production;
 
   money += income;
 
@@ -134,6 +227,9 @@ let saveGame = () => {
     quarry: quarry,
     copperMine: copperMine,
     ironMine: ironMine,
+    silverMine: silverMine,
+    tungstenMine: tungstenMine,
+    leadMine: leadMine,
   }
 
   localStorage.setItem("save", JSON.stringify(save));

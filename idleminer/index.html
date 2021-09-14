@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Idle Miner</title>
+  </head>
+  <body>
+
+    <h1>Idle Miner</h1>
+
+    <button id="manual click" onClick="onClick()">Click to mine!</button>
+
+    <h4>Money:
+      <span id="money">
+        $0
+      </span> <br>
+      Income: <span id="income">
+        $0/s
+      </span>
+      <br><br>
+      Buildings:
+    </h4>
+
+    <button id="quarry" onClick="quarry.buy()"></button> <br>
+    <button id="copperMine" onClick="copperMine.buy()"></button> <br>
+    <button id="ironMine" onClick="ironMine.buy()"></button> <br>
+
+    <br><br>
+
+    <button id="save" onClick="saveGame()">Manual Save</button> <br> <br>
+    <button id="wipe" onClick="wipeSave()">Delete Save</button> <br> <br>
+
+    <h4>Version 0.1</h4>
+
+    <script src="index.js"></script>
+
+  </body>
+</html>

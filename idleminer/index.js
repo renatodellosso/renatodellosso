@@ -13,6 +13,7 @@ let quarry = {
   cost: 20,
   count: 0,
   production: 1,
+  upgradeCost: 10000,
 
   buy: () => {
     if (money >= quarry.cost) {
@@ -25,9 +26,22 @@ let quarry = {
     }
   },
 
+  upgrade: () => {
+    if (money >= quarry.upgradeCost) {
+      money -= quarry.upgradeCost;
+
+      quarry.production *= 2;
+
+      quarry.upgradeCost = Math.round(quarry.upgradeCost * 50);
+      quarry.updateButton();
+    }
+  },
+
   updateButton: () => {
     let btn = document.getElementById('quarry');
     btn.innerHTML = quarry.count + " " + quarry.name + " - costs $" + quarry.cost + ", produces $" + quarry.production + "/s";
+    let uBtn = document.getElementById('quarryUpgrade');
+    uBtn.innerHTML = "Upgrade (doubles production): $" + quarry.upgradeCost;
   }
 }
 
@@ -36,6 +50,7 @@ let copperMine = {
   cost: 300,
   count: 0,
   production: 6,
+  upgradeCost: 50000,
 
   buy: () => {
     if (money >= copperMine.cost) {
@@ -48,9 +63,22 @@ let copperMine = {
     }
   },
 
+  upgrade: () => {
+    if (money >= copperMine.upgradeCost) {
+      money -= copperMine.upgradeCost;
+
+      copperMine.production *= 2;
+
+      copperMine.upgradeCost = Math.round(copperMine.upgradeCost * 50);
+      copperMine.updateButton();
+    }
+  },
+
   updateButton: () => {
     let btn = document.getElementById('copperMine');
     btn.innerHTML = copperMine.count + " " + copperMine.name + " - costs $" + copperMine.cost + ", produces $" + copperMine.production + "/s";
+    let uBtn = document.getElementById('copperUpgrade');
+    uBtn.innerHTML = "Upgrade (doubles production): $" + copperMine.upgradeCost;
   }
 }
 
@@ -59,6 +87,7 @@ let ironMine = {
   cost: 1000,
   count: 0,
   production: 17,
+  upgradeCost: 350000,
 
   buy: () => {
     if (money >= ironMine.cost) {
@@ -71,9 +100,22 @@ let ironMine = {
     }
   },
 
+  upgrade: () => {
+    if (money >= ironMine.upgradeCost) {
+      money -= ironMine.upgradeCost;
+
+      ironMine.production *= 2;
+
+      ironMine.upgradeCost = Math.round(ironMine.upgradeCost * 50);
+      ironMine.updateButton();
+    }
+  },
+
   updateButton: () => {
     let btn = document.getElementById('ironMine');
     btn.innerHTML = ironMine.count + " " + ironMine.name + " - costs $" + ironMine.cost + ", produces $" + ironMine.production + "/s";
+    let uBtn = document.getElementById('ironUpgrade');
+    uBtn.innerHTML = "Upgrade (doubles production): $" + ironMine.upgradeCost;
   }
 }
 
@@ -82,6 +124,7 @@ let silverMine = {
   cost: 10000,
   count: 0,
   production: 50,
+  upgradeCost: 350000,
 
   buy: () => {
     if (money >= silverMine.cost) {
@@ -94,9 +137,22 @@ let silverMine = {
     }
   },
 
+  upgrade: () => {
+    if (money >= silverMine.upgradeCost) {
+      money -= silverMine.upgradeCost;
+
+      silverMine.production *= 2;
+
+      silverMine.upgradeCost = Math.round(silverMine.upgradeCost * 50);
+      silverMine.updateButton();
+    }
+  },
+
   updateButton: () => {
     let btn = document.getElementById('silverMine');
     btn.innerHTML = silverMine.count + " " + silverMine.name + " - costs $" + silverMine.cost + ", produces $" + silverMine.production + "/s";
+    let uBtn = document.getElementById('silverUpgrade');
+    uBtn.innerHTML = "Upgrade (doubles production): $" + silverMine.upgradeCost;
   }
 }
 
@@ -160,36 +216,42 @@ let loadGame = () => {
     if (typeof save.quarry.cost !== "undefined") quarry.cost = save.quarry.cost;
     if (typeof save.quarry.count !== "undefined") quarry.count = save.quarry.count;
     if (typeof save.quarry.production !== "undefined") quarry.production = save.quarry.production;
+    if (typeof save.quarry.upgradeCost !== "undefined") quarry.upgradeCost = save.quarry.upgradeCost;
   }
 
   if (typeof save.copperMine !== "undefined") {
     if (typeof save.copperMine.cost !== "undefined") copperMine.cost = save.copperMine.cost;
     if (typeof save.copperMine.count !== "undefined") copperMine.count = save.copperMine.count;
     if (typeof save.copperMine.production !== "undefined") copperMine.production = save.copperMine.production;
+    if (typeof save.copperMine.upgradeCost !== "undefined") copperMine.upgradeCost = save.copperMine.upgradeCost;
   }
 
   if (typeof save.ironMine !== "undefined") {
     if (typeof save.ironMine.cost !== "undefined") ironMine.cost = save.ironMine.cost;
     if (typeof save.ironMine.count !== "undefined") ironMine.count = save.ironMine.count;
-    if (typeof save.ironMine.production !== "undefined") ironMine.production = save.ironMine.production;
+    if (typeof save.ironMine.production !== "undefined") ironMine.production = save.ironMine.production
+    if (typeof save.ironMine.upgradeCost !== "undefined") ironMine.upgradeCost = save.ironMine.upgradeCost;
   }
 
   if (typeof save.silverMine !== "undefined") {
     if (typeof save.silverMine.cost !== "undefined") silverMine.cost = save.silverMine.cost;
     if (typeof save.silverMine.count !== "undefined") silverMine.count = save.silverMine.count;
     if (typeof save.silverMine.production !== "undefined") silverMine.production = save.silverMine.production;
+    if (typeof save.silverMine.upgradeCost !== "undefined") silverMine.upgradeCost = save.silverMine.upgradeCost;
   }
 
   if (typeof save.tungstenMine !== "undefined") {
     if (typeof save.tungstenMine.cost !== "undefined") tungstenMine.cost = save.tungstenMine.cost;
     if (typeof save.tungstenMine.count !== "undefined") tungstenMine.count = save.tungstenMine.count;
     if (typeof save.tungstenMine.production !== "undefined") tungstenMine.production = save.tungstenMine.production;
+    if (typeof save.tungstenMine.upgradeCost !== "undefined") tungstenMine.upgradeCost = save.tungstenMine.upgradeCost;
   }
 
   if (typeof save.leadMine !== "undefined") {
     if (typeof save.leadMine.cost !== "undefined") leadMine.cost = save.leadMine.cost;
     if (typeof save.leadMine.count !== "undefined") leadMine.count = save.leadMine.count;
     if (typeof save.leadMine.production !== "undefined") leadMine.production = save.leadMine.production;
+    if (typeof save.leadMine.upgradeCost !== "undefined") leadMine.upgradeCost = save.leadMine.upgradeCost;
   }
 
   console.log("Loaded game");

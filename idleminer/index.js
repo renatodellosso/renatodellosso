@@ -238,7 +238,7 @@ let quartzMine = {
   name: "Quartz Mines",
   cost: 500000,
   count: 0,
-  production: 750,
+  production: 600,
   upgradeCost: 3500000,
 
   buy: () => {

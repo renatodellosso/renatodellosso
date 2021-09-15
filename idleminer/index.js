@@ -7,9 +7,29 @@ let prettifyInt = (i) => {
     return i.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
+let clicker = {
+  mpc: 1,
+  cost: 1000,
+
+  upgrade: () => {
+    if (money >= clicker.cost) {
+      money -= clicker.cost;
+      clicker.mpc++;
+      clicker.cost = Math.round(clicker.cost * 1.5);
+      clicker.updateButton();
+    }
+  },
+
+  updateButton: () => {
+    let btn = document.getElementById('upgradeClicker');
+    btn.innerHTML = "$" + prettifyInt(clicker.mpc) + "/click. Upgrade (+$1/click): $" +  prettifyInt(clicker.cost);
+  }
+}
+
 let onClick = () => {
-  money++;
-  moneyDisplay.innerHTML = '$' + money;
+  money += clicker.mpc;
+  money = Math.round(money * 10)/10;
+  moneyDisplay.innerHTML = '$' + prettifyInt(money);
 }
 
 let quarry = {
@@ -127,7 +147,7 @@ let silverMine = {
   name: "Silver Mines",
   cost: 10000,
   count: 0,
-  production: 10,
+  production: 50,
   upgradeCost: 500000,
 
   buy: () => {
@@ -276,7 +296,7 @@ let rubyMine = {
   cost: 1200000,
   count: 0,
   production: 750,
-  upgradeCost: 5000000,
+  upgradeCost: 25000000,
 
   buy: () => {
     if (money >= rubyMine.cost) {
@@ -313,7 +333,7 @@ let sapphireMine = {
   cost: 2000000,
   count: 0,
   production: 1000,
-  upgradeCost: 1250000,
+  upgradeCost: 45000000,
 
   buy: () => {
     if (money >= sapphireMine.cost) {
@@ -345,6 +365,80 @@ let sapphireMine = {
   }
 }
 
+let goldMine = {
+  name: "Gold Mines",
+  cost: 25000000,
+  count: 0,
+  production: 5000,
+  upgradeCost: 150000000,
+
+  buy: () => {
+    if (money >= goldMine.cost) {
+      money -= goldMine.cost;
+
+      goldMine.count++;
+      goldMine.cost = Math.round(goldMine.cost * 1.1);
+
+      goldMine.updateButton();
+    }
+  },
+
+  upgrade: () => {
+    if (money >= goldMine.upgradeCost) {
+      money -= goldMine.upgradeCost;
+
+      goldMine.production *= 2;
+
+      goldMine.upgradeCost = Math.round(goldMine.upgradeCost * 10);
+      goldMine.updateButton();
+    }
+  },
+
+  updateButton: () => {
+    let btn = document.getElementById('goldMine');
+    btn.innerHTML = goldMine.count + " " + goldMine.name + " - costs $" + prettifyInt(goldMine.cost) + ", produces $" + prettifyInt(goldMine.production) + "/s";
+    let uBtn = document.getElementById('goldMineUpgrade');
+    uBtn.innerHTML = "Upgrade (doubles production): $" + prettifyInt(goldMine.upgradeCost);
+  }
+}
+
+let platinumMine = {
+  name: "Platinum Mines",
+  cost: 150000000,
+  count: 0,
+  production: 12000,
+  upgradeCost: 500000000,
+
+  buy: () => {
+    if (money >= platinumMine.cost) {
+      money -= platinumMine.cost;
+
+      platinumMine.count++;
+      platinumMine.cost = Math.round(platinumMine.cost * 1.1);
+
+      platinumMine.updateButton();
+    }
+  },
+
+  upgrade: () => {
+    if (money >= platinumMine.upgradeCost) {
+      money -= platinumMine.upgradeCost;
+
+      platinumMine.production *= 2;
+
+      platinumMine.upgradeCost = Math.round(platinumMine.upgradeCost * 10);
+      platinumMine.updateButton();
+    }
+  },
+
+  updateButton: () => {
+    let btn = document.getElementById('platinumMine');
+    btn.innerHTML = platinumMine.count + " " + platinumMine.name + " - costs $" + prettifyInt(platinumMine.cost) + ", produces $" + prettifyInt(platinumMine.production) + "/s";
+    let uBtn = document.getElementById('platinumMineUpgrade');
+    uBtn.innerHTML = "Upgrade (doubles production): $" + prettifyInt(platinumMine.upgradeCost);
+  }
+}
+
 let loadGame = () => {
   let save = JSON.parse(localStorage.getItem("save"));
 
@@ -353,6 +447,11 @@ let loadGame = () => {
   if (typeof save.money !== "undefined") {
      money = save.money;
      moneyDisplay.innerHTML = money;
+   }
+
+   if (typeof save.clicker !== "undefined") {
+     if(save.clicker.mpc !== "undefined") clicker.mpc = save.clicker.mpc;
+     if(save.clicker.cost !== "undefined") clicker.cost = save.clicker.cost;
    }
 
   if (typeof save.leadMine !== "undefined") {
@@ -418,9 +517,24 @@ let loadGame = () => {
     if (typeof save.sapphireMine.upgradeCost !== "undefined") sapphireMine.upgradeCost = save.sapphireMine.upgradeCost;
   }
 
+  if (typeof save.goldMine !== "undefined") {
+    if (typeof save.goldMine.cost !== "undefined") goldMine.cost = save.goldMine.cost;
+    if (typeof save.goldMine.count !== "undefined") goldMine.count = save.goldMine.count;
+    if (typeof save.goldMine.production !== "undefined") goldMine.production = save.goldMine.production;
+    if (typeof save.goldMine.upgradeCost !== "undefined") goldMine.upgradeCost = save.goldMine.upgradeCost;
+  }
+
+  if (typeof save.platinumMine !== "undefined") {
+    if (typeof save.platinumMine.cost !== "undefined") platinumMine.cost = save.platinumMine.cost;
+    if (typeof save.platinumMine.count !== "undefined") platinumMine.count = save.platinumMine.count;
+    if (typeof save.platinumMine.production !== "undefined") platinumMine.production = save.platinumMine.production;
+    if (typeof save.platinumMine.upgradeCost !== "undefined") platinumMine.upgradeCost = save.platinumMine.upgradeCost;
+  }
 
   console.log("Loaded game");
   }
+
+  clicker.updateButton();
 
   quarry.updateButton();
   copperMine.updateButton();
@@ -431,6 +545,8 @@ let loadGame = () => {
   quartzMine.updateButton();
   rubyMine.updateButton();
   sapphireMine.updateButton();
+  goldMine.updateButton();
+  platinumMine.updateButton();
 }
 
 loadGame();
@@ -447,16 +563,21 @@ setInterval(() => {
   income += quartzMine.count * quartzMine.production;
   income += rubyMine.count * quartzMine.production;
   income += sapphireMine.count * sapphireMine.production;
+  income += goldMine.count * goldMine.production;
+  income += platinumMine.count * platinumMine.production;
+
+  income /= 10;
 
   money += income;
 
   moneyDisplay.innerHTML = '$' + prettifyInt(money);
-  incomeDisplay.innerHTML = "$" + prettifyInt(income) + "/s";
-}, 1000)
+  incomeDisplay.innerHTML = "$" + prettifyInt(income*10) + "/s";
+}, 100)
 
 let saveGame = () => {
   let save = {
     money: money,
+    clicker: clicker,
     quarry: quarry,
     copperMine: copperMine,
     ironMine: ironMine,
@@ -466,6 +587,8 @@ let saveGame = () => {
     quartzMine: quartzMine,
     rubyMine: rubyMine,
     sapphireMine: sapphireMine,
+    goldMine: goldMine,
+    platinumMine: platinumMine,
   }
 
   localStorage.setItem("save", JSON.stringify(save));
@@ -474,9 +597,9 @@ let saveGame = () => {
 }
 
 setInterval(() => {
-  money = Math.round(money);
+  money = Math.round(money * 10)/10;
   moneyDisplay.innerHTML = '$' + prettifyInt(money);
-}, 10)
+}, 5)
 
 setInterval(saveGame, 10000);
 

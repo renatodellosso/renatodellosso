@@ -4,9 +4,11 @@
     <meta charset="utf-8">
     <title>Idle Miner</title>
   </head>
-  <body>
+  <body class="body">
 
-    <h1>Idle Miner</h1>
+    <link rel="stylesheet" href="style.css">
+
+    <h1 class="title">Idle Miner</h1>
 
     <button id="manual click" onClick="onClick()">Click to mine!</button>
 
@@ -18,6 +20,12 @@
         $0/s
       </span>
       <br><br>
+      Upgrades:
+    </h4>
+
+    <button id="upgradeClicker" onClick="clicker.upgrade()"></button>
+
+    <h4>
       Buildings:
     </h4>
 
@@ -39,13 +47,17 @@
       <button id="rubyMineUpgrade" onClick="rubyMine.upgrade()"> </button> <br>
     <button id="sapphireMine" onClick="sapphireMine.buy()"></button>
       <button id="sapphireMineUpgrade" onClick="sapphireMine.upgrade()"> </button> <br>
+    <button id="goldMine" onClick="goldMine.buy()"></button>
+      <button id="goldMineUpgrade" onClick="goldMine.upgrade()"> </button> <br>
+    <button id="platinumMine" onClick="platinumMine.buy()"></button>
+      <button id="platinumMineUpgrade" onClick="platinumMine.upgrade()"> </button> <br>
 
     <br><br>
 
     <button id="save" onClick="saveGame()">Manual Save</button> <br> <br>
     <button id="wipe" onClick="wipeSave()">Delete Save</button> <br> <br>
 
-    <h4>Version 0.2</h4>
+    <h4>Version 0.2.1</h4>
 
     <script src="index.js"></script>
 

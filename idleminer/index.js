@@ -28,7 +28,7 @@ let clicker = {
 
   updateButton: () => {
     let btn = document.getElementById('upgradeClicker');
-    btn.innerHTML = "$" + prettifyInt(clicker.mpc) + "/click. Upgrade (x1.5/click): $" +  prettifyInt(clicker.cost);
+    btn.innerHTML = "$" + prettifyInt(clicker.mpc) + "/click, upgrade (x1.5/click): $" +  prettifyInt(clicker.cost);
   }
 }
 

@@ -3,6 +3,9 @@ let money = 0;
 let moneyDisplay = document.getElementById('money');
 let incomeDisplay = document.getElementById('income');
 
+let million = 1000000;
+let billion = million * 1000;
+
 let prettifyInt = (i) => {
     return i.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
@@ -439,6 +442,154 @@ let platinumMine = {
   }
 }
 
+let titaniumMine = {
+  name: "Titanium Mines",
+  cost: 500000000,
+  count: 0,
+  production: 25000,
+  upgradeCost: 1500000000,
+
+  buy: () => {
+    if (money >= titaniumMine.cost) {
+      money -= titaniumMine.cost;
+
+      titaniumMine.count++;
+      titaniumMine.cost = Math.round(titaniumMine.cost * 1.1);
+
+      titaniumMine.updateButton();
+    }
+  },
+
+  upgrade: () => {
+    if (money >= titaniumMine.upgradeCost) {
+      money -= titaniumMine.upgradeCost;
+
+      titaniumMine.production *= 2;
+
+      titaniumMine.upgradeCost = Math.round(titaniumMine.upgradeCost * 10);
+      titaniumMine.updateButton();
+    }
+  },
+
+  updateButton: () => {
+    let btn = document.getElementById('titaniumMine');
+    btn.innerHTML = titaniumMine.count + " " + titaniumMine.name + " - costs $" + prettifyInt(titaniumMine.cost) + ", produces $" + prettifyInt(titaniumMine.production) + "/s";
+    let uBtn = document.getElementById('titaniumMineUpgrade');
+    uBtn.innerHTML = "Upgrade (doubles production): $" + prettifyInt(titaniumMine.upgradeCost);
+  }
+}
+
+let uraniumMine = {
+  name: "Uranium Mines",
+  cost: 2500000000,
+  count: 0,
+  production: 100000,
+  upgradeCost: 10000000000,
+
+  buy: () => {
+    if (money >= uraniumMine.cost) {
+      money -= uraniumMine.cost;
+
+      uraniumMine.count++;
+      uraniumMine.cost = Math.round(uraniumMine.cost * 1.1);
+
+      uraniumMine.updateButton();
+    }
+  },
+
+  upgrade: () => {
+    if (money >= uraniumMine.upgradeCost) {
+      money -= uraniumMine.upgradeCost;
+
+      uraniumMine.production *= 2;
+
+      uraniumMine.upgradeCost = Math.round(uraniumMine.upgradeCost * 10);
+      uraniumMine.updateButton();
+    }
+  },
+
+  updateButton: () => {
+    let btn = document.getElementById('uraniumMine');
+    btn.innerHTML = uraniumMine.count + " " + uraniumMine.name + " - costs $" + prettifyInt(uraniumMine.cost) + ", produces $" + prettifyInt(uraniumMine.production) + "/s";
+    let uBtn = document.getElementById('uraniumMineUpgrade');
+    uBtn.innerHTML = "Upgrade (doubles production): $" + prettifyInt(uraniumMine.upgradeCost);
+  }
+}
+
+let plutoniumMine = {
+  name: "Plutonium Mines",
+  cost: 12 * billion,
+  count: 0,
+  production: 250000,
+  upgradeCost: 400 * billion,
+
+  buy: () => {
+    if (money >= plutoniumMine.cost) {
+      money -= plutoniumMine.cost;
+
+      plutoniumMine.count++;
+      plutoniumMine.cost = Math.round(plutoniumMine.cost * 1.1);
+
+      plutoniumMine.updateButton();
+    }
+  },
+
+  upgrade: () => {
+    if (money >= plutoniumMine.upgradeCost) {
+      money -= plutoniumMine.upgradeCost;
+
+      plutoniumMine.production *= 2;
+
+      plutoniumMine.upgradeCost = Math.round(plutoniumMine.upgradeCost * 10);
+      plutoniumMine.updateButton();
+    }
+  },
+
+  updateButton: () => {
+    let btn = document.getElementById('plutoniumMine');
+    btn.innerHTML = plutoniumMine.count + " " + plutoniumMine.name + " - costs $" + prettifyInt(plutoniumMine.cost) + ", produces $" + prettifyInt(plutoniumMine.production) + "/s";
+    let uBtn = document.getElementById('plutoniumMineUpgrade');
+    uBtn.innerHTML = "Upgrade (doubles production): $" + prettifyInt(plutoniumMine.upgradeCost);
+  }
+}
+
+let diamondMine = {
+  name: "Diamond Mines",
+  cost: 50 * billion,
+  count: 0,
+  production: 800000,
+  upgradeCost: 500 * billion,
+
+  buy: () => {
+    if (money >= diamondMine.cost) {
+      money -= diamondMine.cost;
+
+      diamondMine.count++;
+      diamondMine.cost = Math.round(diamondMine.cost * 1.1);
+
+      diamondMine.updateButton();
+    }
+  },
+
+  upgrade: () => {
+    if (money >= diamondMine.upgradeCost) {
+      money -= diamondMine.upgradeCost;
+
+      diamondMine.production *= 2;
+
+      diamondMine.upgradeCost = Math.round(diamondMine.upgradeCost * 10);
+      diamondMine.updateButton();
+    }
+  },
+
+  updateButton: () => {
+    let btn = document.getElementById('diamondMine');
+    btn.innerHTML = diamondMine.count + " " + diamondMine.name + " - costs $" + prettifyInt(diamondMine.cost) + ", produces $" + prettifyInt(diamondMine.production) + "/s";
+    let uBtn = document.getElementById('diamondMineUpgrade');
+    uBtn.innerHTML = "Upgrade (doubles production): $" + prettifyInt(diamondMine.upgradeCost);
+  }
+}
+
 let loadGame = () => {
   let save = JSON.parse(localStorage.getItem("save"));
 
@@ -531,6 +682,34 @@ let loadGame = () => {
     if (typeof save.platinumMine.upgradeCost !== "undefined") platinumMine.upgradeCost = save.platinumMine.upgradeCost;
   }
 
+  if (typeof save.titaniumMine !== "undefined") {
+    if (typeof save.titaniumMine.cost !== "undefined") titaniumMine.cost = save.titaniumMine.cost;
+    if (typeof save.titaniumMine.count !== "undefined") titaniumMine.count = save.titaniumMine.count;
+    if (typeof save.titaniumMine.production !== "undefined") titaniumMine.production = save.titaniumMine.production;
+    if (typeof save.titaniumMine.upgradeCost !== "undefined") titaniumMine.upgradeCost = save.titaniumMine.upgradeCost;
+  }
+
+  if (typeof save.uraniumMine !== "undefined") {
+    if (typeof save.uraniumMine.cost !== "undefined") uraniumMine.cost = save.uraniumMine.cost;
+    if (typeof save.uraniumMine.count !== "undefined") uraniumMine.count = save.uraniumMine.count;
+    if (typeof save.uraniumMine.production !== "undefined") uraniumMine.production = save.uraniumMine.production;
+    if (typeof save.uraniumMine.upgradeCost !== "undefined") uraniumMine.upgradeCost = save.uraniumMine.upgradeCost;
+  }
+
+  if (typeof save.plutoniumMine !== "undefined") {
+    if (typeof save.plutoniumMine.cost !== "undefined") plutoniumMine.cost = save.plutoniumMine.cost;
+    if (typeof save.plutoniumMine.count !== "undefined") plutoniumMine.count = save.plutoniumMine.count;
+    if (typeof save.plutoniumMine.production !== "undefined") plutoniumMine.production = save.plutoniumMine.production;
+    if (typeof save.plutoniumMine.upgradeCost !== "undefined") plutoniumMine.upgradeCost = save.plutoniumMine.upgradeCost;
+  }
+
+  if (typeof save.diamondMine !== "undefined") {
+    if (typeof save.diamondMine.cost !== "undefined") diamondMine.cost = save.diamondMine.cost;
+    if (typeof save.diamondMine.count !== "undefined") diamondMine.count = save.diamondMine.count;
+    if (typeof save.diamondMine.production !== "undefined") diamondMine.production = save.diamondMine.production;
+    if (typeof save.diamondMine.upgradeCost !== "undefined") diamondMine.upgradeCost = save.diamondMine.upgradeCost;
+  }
+
   console.log("Loaded game");
   }
 
@@ -547,6 +726,10 @@ let loadGame = () => {
   sapphireMine.updateButton();
   goldMine.updateButton();
   platinumMine.updateButton();
+  titaniumMine.updateButton();
+  uraniumMine.updateButton();
+  plutoniumMine.updateButton();
+  diamondMine.updateButton();
 }
 
 loadGame();
@@ -565,12 +748,16 @@ setInterval(() => {
   income += sapphireMine.count * sapphireMine.production;
   income += goldMine.count * goldMine.production;
   income += platinumMine.count * platinumMine.production;
+  income += titaniumMine.count * titaniumMine.production;
+  income += uraniumMine.count * uraniumMine.production;
+  income += plutoniumMine.count * plutoniumMine.production;
+  income += diamondMine.count * diamondMine.production;
 
   income /= 10;
 
   money += income;
 
-  moneyDisplay.innerHTML = '$' + prettifyInt(money);
+  moneyDisplay.innerHTML = '$' + prettifyInt(Math.round(money*10)/10);
   incomeDisplay.innerHTML = "$" + prettifyInt(income*10) + "/s";
 }, 100)
 
@@ -589,6 +776,10 @@ let saveGame = () => {
     sapphireMine: sapphireMine,
     goldMine: goldMine,
     platinumMine: platinumMine,
+    titaniumMine: titaniumMine,
+    uraniumMine: uraniumMine,
+    plutoniumMine: plutoniumMine,
+    diamondMine: diamondMine,
   }
 
   localStorage.setItem("save", JSON.stringify(save));

@@ -1,6 +1,5 @@
 //Ideas:
 //Upgrades that slowly produce buildings
-//Buff clicker upgrade (make it multiply by something like 1.5)
 
 let manualClick = document.getElementById('manual click');
 let money = 0;
@@ -30,6 +29,25 @@ let clicker = {
   updateButton: () => {
     let btn = document.getElementById('upgradeClicker');
     btn.innerHTML = "$" + prettifyInt(clicker.mpc) + "/click. Upgrade (x1.5/click): $" +  prettifyInt(clicker.cost);
+  }
+}
+
+let globalUpgrade = {
+  mod: 1,
+  cost: 100000,
+
+  upgrade: () => {
+    if (money >= globalUpgrade.cost) {
+      money -= globalUpgrade.cost;
+      globalUpgrade.mod += 0.05;
+      globalUpgrade.cost *= 5;
+      globalUpgrade.updateButton();
+    }
+  },
+
+  updateButton: () => {
+    let btn = document.getElementById('globalUpgrade');
+    btn.innerHTML = Math.round(globalUpgrade.mod*100) + "% income, upgrade (+5%): $" + prettifyInt(globalUpgrade.cost);
   }
 }
 
@@ -624,6 +642,11 @@ let loadGame = () => {
      if(save.clicker.cost !== "undefined") clicker.cost = save.clicker.cost;
    }
 
+   if (typeof save.globalUpgrade !== "undefined") {
+     if (save.globalUpgrade.mod !== "undefined") globalUpgrade.mod = save.globalUpgrade.mod;
+       if (save.globalUpgrade.cost !== "undefined") globalUpgrade.cost = save.globalUpgrade.cost;
+   }
+
   if (typeof save.leadMine !== "undefined") {
     if (typeof save.quarry.cost !== "undefined") quarry.cost = save.quarry.cost;
     if (typeof save.quarry.count !== "undefined") quarry.count = save.quarry.count;
@@ -733,6 +756,7 @@ let loadGame = () => {
   }
 
   clicker.updateButton();
+  globalUpgrade.updateButton();
 
   quarry.updateButton();
   copperMine.updateButton();
@@ -771,6 +795,9 @@ setInterval(() => {
   income += uraniumMine.count * uraniumMine.production;
   income += plutoniumMine.count * plutoniumMine.production;
   income += diamondMine.count * diamondMine.production;
+
+  income *= globalUpgrade.mod;
+  income = Math.round(income * 10)/10;
 
   quarry.percentage = Math.round(((quarry.production * quarry.count) / income) * 100)
   quarry.updateButton();
@@ -829,6 +856,7 @@ let saveGame = () => {
   let save = {
     money: money,
     clicker: clicker,
+    globalUpgrade: globalUpgrade,
     quarry: quarry,
     copperMine: copperMine,
     ironMine: ironMine,

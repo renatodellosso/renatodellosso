@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Idle Miner</title>
+    <title id="title">Idle Miner</title>
   </head>
   <body class="body">
 
@@ -30,43 +30,43 @@
       Buildings:
     </h4>
 
-    <button id="quarry" onClick="quarry.buy()"></button>
-      <button id="quarryUpgrade" onClick="quarry.upgrade()"> </button> <br>
-    <button id="copperMine" onClick="copperMine.buy()"></button>
-      <button id="copperMineUpgrade" onClick="copperMine.upgrade()"> </button> <br>
-    <button id="ironMine" onClick="ironMine.buy()"></button>
-      <button id="ironMineUpgrade" onClick="ironMine.upgrade()"> </button> <br>
-    <button id="silverMine" onClick="silverMine.buy()"></button>
-      <button id="silverMineUpgrade" onClick="silverMine.upgrade()"> </button> <br>
-    <button id="tungstenMine" onClick="tungstenMine.buy()"></button>
-      <button id="tungstenMineUpgrade" onClick="tungstenMine.upgrade()"> </button> <br>
-    <button id="leadMine" onClick="leadMine.buy()"></button>
-      <button id="leadMineUpgrade" onClick="leadMine.upgrade()"> </button> <br>
-    <button id="quartzMine" onClick="quartzMine.buy()"></button>
-      <button id="quartzMineUpgrade" onClick="quartzMine.upgrade()"> </button> <br>
-    <button id="rubyMine" onClick="rubyMine.buy()"></button>
-      <button id="rubyMineUpgrade" onClick="rubyMine.upgrade()"> </button> <br>
-    <button id="sapphireMine" onClick="sapphireMine.buy()"></button>
-      <button id="sapphireMineUpgrade" onClick="sapphireMine.upgrade()"> </button> <br>
-    <button id="goldMine" onClick="goldMine.buy()"></button>
-      <button id="goldMineUpgrade" onClick="goldMine.upgrade()"> </button> <br>
-    <button id="platinumMine" onClick="platinumMine.buy()"></button>
-      <button id="platinumMineUpgrade" onClick="platinumMine.upgrade()"> </button> <br>
-    <button id="titaniumMine" onClick="titaniumMine.buy()"></button>
-      <button id="titaniumMineUpgrade" onClick="titaniumMine.upgrade()"> </button> <br>
-    <button id="uraniumMine" onClick="uraniumMine.buy()"></button>
-      <button id="uraniumMineUpgrade" onClick="uraniumMine.upgrade()"> </button> <br>
-    <button id="plutoniumMine" onClick="plutoniumMine.buy()"></button>
-      <button id="plutoniumMineUpgrade" onClick="plutoniumMine.upgrade()"> </button> <br>
-    <button id="diamondMine" onClick="diamondMine.buy()"></button>
-      <button id="diamondMineUpgrade" onClick="diamondMine.upgrade()"> </button> <br>
+    <button id="Quarries" onClick="building.buy(quarry)"></button>
+      <button id="QuarriesUpgrade" onClick="building.upgrade(quarry)"> </button> <br>
+    <button id="Copper Mines" onClick="building.buy(copperMine)"></button>
+      <button id="Copper MinesUpgrade" onClick="building.upgrade(copperMine)"> </button> <br>
+    <button id="Iron Mines" onClick="building.buy(ironMine)"></button>
+      <button id="Iron MinesUpgrade" onClick="building.upgrade(ironMine)"> </button> <br>
+    <button id="Silver Mines" onClick="building.buy(silverMine)"></button>
+      <button id="Silver MinesUpgrade" onClick="building.upgrade(silverMine)"> </button> <br>
+    <button id="Tungsten Mines" onClick="building.buy(tungstenMine)"></button>
+      <button id="Tungsten MinesUpgrade" onClick="building.upgrade(tungstenMine)"> </button> <br>
+    <button id="Lead Mines" onClick="building.buy(leadMine)"></button>
+      <button id="Lead MinesUpgrade" onClick="leadMine.upgrade()"> </button> <br>
+    <button id="Quartz Mines" onClick="building.buy(quartzMine)"></button>
+      <button id="Quartz MinesUpgrade" onClick="building.upgrade(quartzMine)"> </button> <br>
+    <button id="Ruby Mines" onClick="building.buy(rubyMine)"></button>
+      <button id="Ruby MinesUpgrade" onClick="building.upgrade(rubyMine)"> </button> <br>
+    <button id="Sapphire Mines" onClick="building.buy()sapphireMine"></button>
+      <button id="Sapphire MinesUpgrade" onClick="building.upgrade(sapphireMine)"> </button> <br>
+    <button id="Gold Mines" onClick="building.buy(goldMine)"></button>
+      <button id="Gold MinesUpgrade" onClick="building.upgrade(goldMine)"> </button> <br>
+    <button id="Platinum Mines" onClick="building.buy(platinumMine)"></button>
+      <button id="Platinum MinesUpgrade" onClick="building.upgrade(platinumMine)"> </button> <br>
+    <button id="Titanium Mines" onClick="building.buy(titaniumMine)"></button>
+      <button id="Titanium MinesUpgrade" onClick="building.upgrade(titaniumMine)"> </button> <br>
+    <button id="Uranium Mines" onClick="building.buy(uraniumMine)"></button>
+      <button id="Uranium MinesUpgrade" onClick="building.upgrade(uraniumMine)"> </button> <br>
+    <button id="Plutonium Mines" onClick="building.buy(plutoniumMine)"></button>
+      <button id="Plutonium MinesUpgrade" onClick="building.upgrade(plutoniumMine)"> </button> <br>
+    <button id="Diamond Mines" onClick="building.buy(diamondMine)"></button>
+      <button id="Diamond MinesUpgrade" onClick="building.upgrade(diamondMine)"> </button> <br>
 
     <br><br>
 
     <button id="save" onClick="saveGame()">Manual Save</button> <br> <br>
     <button id="wipe" onClick="wipeSave()">Delete Save</button> <br> <br>
 
-    <h4>Version 0.2.4</h4>
+    <h4>Version 0.3.0</h4>
 
     <script src="index.js"></script>
 

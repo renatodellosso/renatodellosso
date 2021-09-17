@@ -13,6 +13,38 @@ let prettifyInt = (i) => {
     return i.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
+let building = {
+
+    buy: (b) => {
+      if (money >= b.cost) {
+        money -= b.cost;
+
+        b.count++;
+        b.cost = Math.round(b.cost * 1.1);
+
+        building.updateButton(b);
+      }
+    },
+
+    upgrade: (b) => {
+      if (money >= b.upgradeCost) {
+        money -= b.upgradeCost;
+
+        b.production *= 2;
+
+        b.upgradeCost = Math.round(b.upgradeCost * 10);
+        building.updateButton(b);
+      }
+    },
+
+    updateButton: (b) => {
+      let btn = document.getElementById(b.name);
+      btn.innerHTML = b.count + " " + b.name + " - costs $" + prettifyInt(b.cost) + ", produces $" + prettifyInt(b.production) + "/s ($" + b.production * b.count + "/s total, " + b.percentage + "%)";;
+      let uBtn = document.getElementById(b.name + 'Upgrade');
+      uBtn.innerHTML = "Upgrade (doubles production): $" + prettifyInt(b.upgradeCost);
+    }
+}
+
 let clicker = {
   mpc: 1,
   cost: 1000,
@@ -72,7 +104,7 @@ let quarry = {
       quarry.count++;
       quarry.cost = Math.round(quarry.cost * 1.1);
 
-      quarry.updateButton();
+      building.updateButton(quarry);
     }
   },
 
@@ -83,7 +115,7 @@ let quarry = {
       quarry.production *= 2;
 
       quarry.upgradeCost = Math.round(quarry.upgradeCost * 10);
-      quarry.updateButton();
+      building.updateButton(quarry);
     }
   },
 
@@ -110,7 +142,7 @@ let copperMine = {
       copperMine.count++;
       copperMine.cost = Math.round(copperMine.cost * 1.1);
 
-      copperMine.updateButton();
+      building.updateButton(copperMine);
     }
   },
 
@@ -121,7 +153,7 @@ let copperMine = {
       copperMine.production *= 2;
 
       copperMine.upgradeCost = Math.round(copperMine.upgradeCost * 10);
-      copperMine.updateButton();
+      building.updateButton(copperMine);
     }
   },
 
@@ -148,7 +180,7 @@ let ironMine = {
       ironMine.count++;
       ironMine.cost = Math.round(ironMine.cost * 1.1);
 
-      ironMine.updateButton();
+      building.updateButton(ironMine);
     }
   },
 
@@ -159,7 +191,7 @@ let ironMine = {
       ironMine.production *= 2;
 
       ironMine.upgradeCost = Math.round(ironMine.upgradeCost * 10);
-      ironMine.updateButton();
+      building.updateButton(ironMine);
     }
   },
 
@@ -186,7 +218,7 @@ let silverMine = {
       silverMine.count++;
       silverMine.cost = Math.round(silverMine.cost * 1.1);
 
-      silverMine.updateButton();
+      building.updateButton(silverMine);
     }
   },
 
@@ -197,7 +229,7 @@ let silverMine = {
       silverMine.production *= 2;
 
       silverMine.upgradeCost = Math.round(silverMine.upgradeCost * 10);
-      silverMine.updateButton();
+      building.updateButton(silverMine);
     }
   },
 
@@ -224,7 +256,7 @@ let tungstenMine = {
       tungstenMine.count++;
       tungstenMine.cost = Math.round(tungstenMine.cost * 1.1);
 
-      tungstenMine.updateButton();
+      building.updateButton(tungstenMine);
     }
   },
 
@@ -235,7 +267,7 @@ let tungstenMine = {
       tungstenMine.production *= 2;
 
       tungstenMine.upgradeCost = Math.round(tungstenMine.upgradeCost * 10);
-      tungstenMine.updateButton();
+      building.updateButton(tungstenMine);
     }
   },
 
@@ -262,7 +294,7 @@ let leadMine = {
       leadMine.count++;
       leadMine.cost = Math.round(leadMine.cost * 1.1);
 
-      leadMine.updateButton();
+      building.updateButton(leadMine);
     }
   },
 
@@ -273,7 +305,7 @@ let leadMine = {
       leadMine.production *= 2;
 
       leadMine.upgradeCost = Math.round(leadMine.upgradeCost * 10);
-      leadMine.updateButton();
+      building.updateButton(leadMine);
     }
   },
 
@@ -300,7 +332,7 @@ let quartzMine = {
       quartzMine.count++;
       quartzMine.cost = Math.round(quartzMine.cost * 1.1);
 
-      quartzMine.updateButton();
+      building.updateButton(quartzMine);
     }
   },
 
@@ -311,7 +343,7 @@ let quartzMine = {
       quartzMine.production *= 2;
 
       quartzMine.upgradeCost = Math.round(quartzMine.upgradeCost * 10);
-      quartzMine.updateButton();
+      building.updateButton(quartzMine);
     }
   },
 
@@ -338,7 +370,7 @@ let rubyMine = {
       rubyMine.count++;
       rubyMine.cost = Math.round(rubyMine.cost * 1.1);
 
-      rubyMine.updateButton();
+      building.updateButton(rubyMine);
     }
   },
 
@@ -349,7 +381,7 @@ let rubyMine = {
       rubyMine.production *= 2;
 
       rubyMine.upgradeCost = Math.round(rubyMine.upgradeCost * 10);
-      rubyMine.updateButton();
+      building.updateButton(rubyMine);
     }
   },
 
@@ -376,7 +408,7 @@ let sapphireMine = {
       sapphireMine.count++;
       sapphireMine.cost = Math.round(sapphireMine.cost * 1.1);
 
-      sapphireMine.updateButton();
+      building.updateButton(sapphireMine);
     }
   },
 
@@ -387,7 +419,7 @@ let sapphireMine = {
       sapphireMine.production *= 2;
 
       sapphireMine.upgradeCost = Math.round(sapphireMine.upgradeCost * 10);
-      sapphireMine.updateButton();
+      building.updateButton(sapphireMine);
     }
   },
 
@@ -414,7 +446,7 @@ let goldMine = {
       goldMine.count++;
       goldMine.cost = Math.round(goldMine.cost * 1.1);
 
-      goldMine.updateButton();
+      building.updateButton(goldMine);
     }
   },
 
@@ -425,7 +457,7 @@ let goldMine = {
       goldMine.production *= 2;
 
       goldMine.upgradeCost = Math.round(goldMine.upgradeCost * 10);
-      goldMine.updateButton();
+      building.updateButton(goldMine);
     }
   },
 
@@ -452,7 +484,7 @@ let platinumMine = {
       platinumMine.count++;
       platinumMine.cost = Math.round(platinumMine.cost * 1.1);
 
-      platinumMine.updateButton();
+      building.updateButton(platinumMine);
     }
   },
 
@@ -463,7 +495,7 @@ let platinumMine = {
       platinumMine.production *= 2;
 
       platinumMine.upgradeCost = Math.round(platinumMine.upgradeCost * 10);
-      platinumMine.updateButton();
+      building.updateButton(platinumMine);
     }
   },
 
@@ -490,7 +522,7 @@ let titaniumMine = {
       titaniumMine.count++;
       titaniumMine.cost = Math.round(titaniumMine.cost * 1.1);
 
-      titaniumMine.updateButton();
+      building.updateButton(titaniumMine);
     }
   },
 
@@ -501,7 +533,7 @@ let titaniumMine = {
       titaniumMine.production *= 2;
 
       titaniumMine.upgradeCost = Math.round(titaniumMine.upgradeCost * 10);
-      titaniumMine.updateButton();
+      building.updateButton(titaniumMine);
     }
   },
 
@@ -528,7 +560,7 @@ let uraniumMine = {
       uraniumMine.count++;
       uraniumMine.cost = Math.round(uraniumMine.cost * 1.1);
 
-      uraniumMine.updateButton();
+      building.updateButton(uraniumMine);
     }
   },
 
@@ -539,7 +571,7 @@ let uraniumMine = {
       uraniumMine.production *= 2;
 
       uraniumMine.upgradeCost = Math.round(uraniumMine.upgradeCost * 10);
-      uraniumMine.updateButton();
+      building.updateButton(uraniumMine);
     }
   },
 
@@ -566,7 +598,7 @@ let plutoniumMine = {
       plutoniumMine.count++;
       plutoniumMine.cost = Math.round(plutoniumMine.cost * 1.1);
 
-      plutoniumMine.updateButton();
+      building.updateButton(plutoniumMine);
     }
   },
 
@@ -577,7 +609,7 @@ let plutoniumMine = {
       plutoniumMine.production *= 2;
 
       plutoniumMine.upgradeCost = Math.round(plutoniumMine.upgradeCost * 10);
-      plutoniumMine.updateButton();
+      building.updateButton(plutoniumMine);
     }
   },
 
@@ -604,7 +636,7 @@ let diamondMine = {
       diamondMine.count++;
       diamondMine.cost = Math.round(diamondMine.cost * 1.1);
 
-      diamondMine.updateButton();
+      building.updateButton(diamondMine);
     }
   },
 
@@ -615,7 +647,7 @@ let diamondMine = {
       diamondMine.production *= 2;
 
       diamondMine.upgradeCost = Math.round(diamondMine.upgradeCost * 10);
-      diamondMine.updateButton();
+      building.updateButton(diamondMine);
     }
   },
 
@@ -758,21 +790,21 @@ let loadGame = () => {
   clicker.updateButton();
   globalUpgrade.updateButton();
 
-  quarry.updateButton();
-  copperMine.updateButton();
-  ironMine.updateButton();
-  silverMine.updateButton();
-  tungstenMine.updateButton();
-  leadMine.updateButton();
-  quartzMine.updateButton();
-  rubyMine.updateButton();
-  sapphireMine.updateButton();
-  goldMine.updateButton();
-  platinumMine.updateButton();
-  titaniumMine.updateButton();
-  uraniumMine.updateButton();
-  plutoniumMine.updateButton();
-  diamondMine.updateButton();
+  building.updateButton(quarry);
+  building.updateButton(copperMine);
+  building.updateButton(ironMine);
+  building.updateButton(silverMine);
+  building.updateButton(tungstenMine);
+  building.updateButton(leadMine);
+  building.updateButton(quartzMine);
+  building.updateButton(rubyMine);
+  building.updateButton(sapphireMine);
+  building.updateButton(goldMine);
+  building.updateButton(platinumMine);
+  building.updateButton(titaniumMine);
+  building.updateButton(uraniumMine);
+  building.updateButton(plutoniumMine);
+  building.updateButton(diamondMine);
 }
 
 loadGame();
@@ -800,49 +832,49 @@ setInterval(() => {
   income = Math.round(income * 10)/10;
 
   quarry.percentage = Math.round(((quarry.production * quarry.count) / income) * 100)
-  quarry.updateButton();
+  building.updateButton(quarry);
 
   copperMine.percentage = Math.round(((copperMine.production * copperMine.count) / income) * 100)
-  copperMine.updateButton();
+  building.updateButton(copperMine);
 
   ironMine.percentage = Math.round(((ironMine.production * ironMine.count) / income) * 100)
-  ironMine.updateButton();
+  building.updateButton(ironMine);
 
   silverMine.percentage = Math.round(((silverMine.production * silverMine.count) / income) * 100)
-  silverMine.updateButton();
+  building.updateButton(silverMine);
 
   tungstenMine.percentage = Math.round(((tungstenMine.production * tungstenMine.count) / income) * 100)
-  tungstenMine.updateButton();
+  building.updateButton(tungstenMine);
 
   leadMine.percentage = Math.round(((leadMine.production * leadMine.count) / income) * 100)
-  leadMine.updateButton();
+  building.updateButton(leadMine);
 
   quartzMine.percentage = Math.round(((quartzMine.production * quartzMine.count) / income) * 100)
-  quartzMine.updateButton();
+  building.updateButton(quartzMine);
 
   rubyMine.percentage = Math.round(((rubyMine.production * rubyMine.count) / income) * 100)
-  rubyMine.updateButton();
+  building.updateButton(rubyMine);
 
   sapphireMine.percentage = Math.round(((sapphireMine.production * sapphireMine.count) / income) * 100)
-  sapphireMine.updateButton();
+  building.updateButton(sapphireMine);
 
   goldMine.percentage = Math.round(((goldMine.production * goldMine.count) / income) * 100)
-  goldMine.updateButton();
+  building.updateButton(goldMine);
 
   platinumMine.percentage = Math.round(((platinumMine.production * platinumMine.count) / income) * 100)
-  platinumMine.updateButton();
+  building.updateButton(platinumMine);
 
   titaniumMine.percentage = Math.round(((titaniumMine.production * titaniumMine.count) / income) * 100)
-  titaniumMine.updateButton();
+  building.updateButton(titaniumMine);
 
   uraniumMine.percentage = Math.round(((uraniumMine.production * uraniumMine.count) / income) * 100)
-  uraniumMine.updateButton();
+  building.updateButton(uraniumMine);
 
   plutoniumMine.percentage = Math.round(((plutoniumMine.production * plutoniumMine.count) / income) * 100)
-  plutoniumMine.updateButton();
+  building.updateButton(plutoniumMine);
 
   diamondMine.percentage = Math.round(((diamondMine.production * diamondMine.count) / income) * 100)
-  diamondMine.updateButton();
+  building.updateButton(diamondMine);
 
   income /= 10;
 
@@ -850,6 +882,7 @@ setInterval(() => {
 
   moneyDisplay.innerHTML = '$' + prettifyInt(Math.round(money*10)/10);
   incomeDisplay.innerHTML = "$" + prettifyInt(income*10) + "/s";
+  document.getElementById('title').innerHTML = "Idle Miner - $" + prettifyInt(money);
 }, 100)
 
 let saveGame = () => {

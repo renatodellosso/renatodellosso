@@ -26,6 +26,17 @@ let building = {
       }
     },
 
+    buyFactory: (b) => {
+      if (money >= b.factoryCost) {
+        money -= b.factoryCost;
+
+        b.factories++;
+        b.factoryCost = Math.round(b.factoryCost * 1.1);
+
+        building.updateButton(b);
+      }
+    },
+
     upgrade: (b) => {
       if (money >= b.upgradeCost) {
         money -= b.upgradeCost;
@@ -39,9 +50,12 @@ let building = {
 
     updateButton: (b) => {
       let btn = document.getElementById(b.name);
-      btn.innerHTML = b.count + " " + b.name + " - costs $" + prettifyInt(b.cost) + ", produces $" + prettifyInt(b.production) + "/s ($" + b.production * b.count + "/s total, " + b.percentage + "%)";;
+      btn.innerHTML = Math.floor(b.count) + " " + b.name + " - costs $" + prettifyInt(b.cost) + ", produces $" + prettifyInt(b.production) + "/s ($" + b.production * Math.floor(b.count) + "/s total, " + b.percentage + "%)";;
       let uBtn = document.getElementById(b.name + 'Upgrade');
       uBtn.innerHTML = "Upgrade (doubles production): $" + prettifyInt(b.upgradeCost);
+      if (typeof b.factories !== "undefined") {
+        document.getElementById(b.name + 'Factory').innerHTML = b.factories + " Factories - costs $" + prettifyInt(b.factoryCost);
+      }
     }
 }
 
@@ -96,35 +110,8 @@ let quarry = {
   production: 1,
   upgradeCost: 10000,
   percentage: 0,
-
-  buy: () => {
-    if (money >= quarry.cost) {
-      money -= quarry.cost;
-
-      quarry.count++;
-      quarry.cost = Math.round(quarry.cost * 1.1);
-
-      building.updateButton(quarry);
-    }
-  },
-
-  upgrade: () => {
-    if (money >= quarry.upgradeCost) {
-      money -= quarry.upgradeCost;
-
-      quarry.production *= 2;
-
-      quarry.upgradeCost = Math.round(quarry.upgradeCost * 10);
-      building.updateButton(quarry);
-    }
-  },
-
-  updateButton: () => {
-    let btn = document.getElementById('quarry');
-    btn.innerHTML = quarry.count + " " + quarry.name + " - costs $" + prettifyInt(quarry.cost) + ", produces $" + prettifyInt(quarry.production) + "/s ($" + quarry.production * quarry.count + "/s total, " + quarry.percentage + "%)";;
-    let uBtn = document.getElementById('quarryUpgrade');
-    uBtn.innerHTML = "Upgrade (doubles production): $" + prettifyInt(quarry.upgradeCost);
-  }
+  factories: 0,
+  factoryCost: 5 * million,
 }
 
 let copperMine = {
@@ -134,35 +121,8 @@ let copperMine = {
   production: 6,
   upgradeCost: 50000,
   percentage: 0,
-
-  buy: () => {
-    if (money >= copperMine.cost) {
-      money -= copperMine.cost;
-
-      copperMine.count++;
-      copperMine.cost = Math.round(copperMine.cost * 1.1);
-
-      building.updateButton(copperMine);
-    }
-  },
-
-  upgrade: () => {
-    if (money >= copperMine.upgradeCost) {
-      money -= copperMine.upgradeCost;
-
-      copperMine.production *= 2;
-
-      copperMine.upgradeCost = Math.round(copperMine.upgradeCost * 10);
-      building.updateButton(copperMine);
-    }
-  },
-
-  updateButton: () => {
-    let btn = document.getElementById('copperMine');
-    btn.innerHTML = copperMine.count + " " + copperMine.name + " - costs $" + prettifyInt(copperMine.cost) + ", produces $" + prettifyInt(copperMine.production) + "/s ($" + copperMine.production * copperMine.count + "/s total, " + copperMine.percentage + "%)";;
-    let uBtn = document.getElementById('copperMineUpgrade');
-    uBtn.innerHTML = "Upgrade (doubles production): $" + prettifyInt(copperMine.upgradeCost);
-  }
+  factories: 0,
+  factoryCost: 15 * million,
 }
 
 let ironMine = {
@@ -172,35 +132,8 @@ let ironMine = {
   production: 17,
   upgradeCost: 350000,
   percentage: 0,
-
-  buy: () => {
-    if (money >= ironMine.cost) {
-      money -= ironMine.cost;
-
-      ironMine.count++;
-      ironMine.cost = Math.round(ironMine.cost * 1.1);
-
-      building.updateButton(ironMine);
-    }
-  },
-
-  upgrade: () => {
-    if (money >= ironMine.upgradeCost) {
-      money -= ironMine.upgradeCost;
-
-      ironMine.production *= 2;
-
-      ironMine.upgradeCost = Math.round(ironMine.upgradeCost * 10);
-      building.updateButton(ironMine);
-    }
-  },
-
-  updateButton: () => {
-    let btn = document.getElementById('ironMine');
-    btn.innerHTML = ironMine.count + " " + ironMine.name + " - costs $" + prettifyInt(ironMine.cost) + ", produces $" + prettifyInt(ironMine.production) + "/s ($" + ironMine.production * ironMine.count + "/s total, " + ironMine.percentage + "%)";;
-    let uBtn = document.getElementById('ironMineUpgrade');
-    uBtn.innerHTML = "Upgrade (doubles production): $" + prettifyInt(ironMine.upgradeCost);
-  }
+  factories: 0,
+  factoryCost: 40 * million,
 }
 
 let silverMine = {
@@ -210,35 +143,6 @@ let silverMine = {
   production: 50,
   upgradeCost: 500000,
   percentage: 0,
-
-  buy: () => {
-    if (money >= silverMine.cost) {
-      money -= silverMine.cost;
-
-      silverMine.count++;
-      silverMine.cost = Math.round(silverMine.cost * 1.1);
-
-      building.updateButton(silverMine);
-    }
-  },
-
-  upgrade: () => {
-    if (money >= silverMine.upgradeCost) {
-      money -= silverMine.upgradeCost;
-
-      silverMine.production *= 2;
-
-      silverMine.upgradeCost = Math.round(silverMine.upgradeCost * 10);
-      building.updateButton(silverMine);
-    }
-  },
-
-  updateButton: () => {
-    let btn = document.getElementById('silverMine');
-    btn.innerHTML = silverMine.count + " " + silverMine.name + " - costs $" + prettifyInt(silverMine.cost) + ", produces $" + prettifyInt(silverMine.production) + "/s ($" + silverMine.production * silverMine.count + "/s total, " + silverMine.percentage + "%)";;
-    let uBtn = document.getElementById('silverMineUpgrade');
-    uBtn.innerHTML = "Upgrade (doubles production): $" + prettifyInt(silverMine.upgradeCost);
-  }
 }
 
 let tungstenMine = {
@@ -248,35 +152,6 @@ let tungstenMine = {
   production: 120,
   upgradeCost: 750000,
   percentage: 0,
-
-  buy: () => {
-    if (money >= tungstenMine.cost) {
-      money -= tungstenMine.cost;
-
-      tungstenMine.count++;
-      tungstenMine.cost = Math.round(tungstenMine.cost * 1.1);
-
-      building.updateButton(tungstenMine);
-    }
-  },
-
-  upgrade: () => {
-    if (money >= tungstenMine.upgradeCost) {
-      money -= tungstenMine.upgradeCost;
-
-      tungstenMine.production *= 2;
-
-      tungstenMine.upgradeCost = Math.round(tungstenMine.upgradeCost * 10);
-      building.updateButton(tungstenMine);
-    }
-  },
-
-  updateButton: () => {
-    let btn = document.getElementById('tungstenMine');
-    btn.innerHTML = tungstenMine.count + " " + tungstenMine.name + " - costs $" + prettifyInt(tungstenMine.cost) + ", produces $" + prettifyInt(tungstenMine.production) + "/s ($" + tungstenMine.production * tungstenMine.count + "/s total, " + tungstenMine.percentage + "%)";;
-    let uBtn = document.getElementById('tungstenMineUpgrade');
-    uBtn.innerHTML = "Upgrade (doubles production): $" + prettifyInt(tungstenMine.upgradeCost);
-  }
 }
 
 let leadMine = {
@@ -286,35 +161,6 @@ let leadMine = {
   production: 300,
   upgradeCost: 1250000,
   percentage: 0,
-
-  buy: () => {
-    if (money >= leadMine.cost) {
-      money -= leadMine.cost;
-
-      leadMine.count++;
-      leadMine.cost = Math.round(leadMine.cost * 1.1);
-
-      building.updateButton(leadMine);
-    }
-  },
-
-  upgrade: () => {
-    if (money >= leadMine.upgradeCost) {
-      money -= leadMine.upgradeCost;
-
-      leadMine.production *= 2;
-
-      leadMine.upgradeCost = Math.round(leadMine.upgradeCost * 10);
-      building.updateButton(leadMine);
-    }
-  },
-
-  updateButton: () => {
-    let btn = document.getElementById('leadMine');
-    btn.innerHTML = leadMine.count + " " + leadMine.name + " - costs $" + prettifyInt(leadMine.cost) + ", produces $" + prettifyInt(leadMine.production) + "/s ($" + leadMine.production * leadMine.count + "/s total, " + leadMine.percentage + "%)";;
-    let uBtn = document.getElementById('leadMineUpgrade');
-    uBtn.innerHTML = "Upgrade (doubles production): $" + prettifyInt(leadMine.upgradeCost);
-  }
 }
 
 let quartzMine = {
@@ -324,35 +170,6 @@ let quartzMine = {
   production: 600,
   upgradeCost: 3500000,
   percentage: 0,
-
-  buy: () => {
-    if (money >= quartzMine.cost) {
-      money -= quartzMine.cost;
-
-      quartzMine.count++;
-      quartzMine.cost = Math.round(quartzMine.cost * 1.1);
-
-      building.updateButton(quartzMine);
-    }
-  },
-
-  upgrade: () => {
-    if (money >= quartzMine.upgradeCost) {
-      money -= quartzMine.upgradeCost;
-
-      quartzMine.production *= 2;
-
-      quartzMine.upgradeCost = Math.round(quartzMine.upgradeCost * 10);
-      building.updateButton(quartzMine);
-    }
-  },
-
-  updateButton: () => {
-    let btn = document.getElementById('quartzMine');
-    btn.innerHTML = quartzMine.count + " " + quartzMine.name + " - costs $" + prettifyInt(quartzMine.cost) + ", produces $" + prettifyInt(quartzMine.production) + "/s ($" + quartzMine.production * quartzMine.count + "/s total, " + quartzMine.percentage + "%)";;
-    let uBtn = document.getElementById('quartzMineUpgrade');
-    uBtn.innerHTML = "Upgrade (doubles production): $" + prettifyInt(quartzMine.upgradeCost);
-  }
 }
 
 let rubyMine = {
@@ -362,35 +179,6 @@ let rubyMine = {
   production: 750,
   upgradeCost: 25000000,
   percentage: 0,
-
-  buy: () => {
-    if (money >= rubyMine.cost) {
-      money -= rubyMine.cost;
-
-      rubyMine.count++;
-      rubyMine.cost = Math.round(rubyMine.cost * 1.1);
-
-      building.updateButton(rubyMine);
-    }
-  },
-
-  upgrade: () => {
-    if (money >= rubyMine.upgradeCost) {
-      money -= rubyMine.upgradeCost;
-
-      rubyMine.production *= 2;
-
-      rubyMine.upgradeCost = Math.round(rubyMine.upgradeCost * 10);
-      building.updateButton(rubyMine);
-    }
-  },
-
-  updateButton: () => {
-    let btn = document.getElementById('rubyMine');
-    btn.innerHTML = rubyMine.count + " " + rubyMine.name + " - costs $" + prettifyInt(rubyMine.cost) + ", produces $" + prettifyInt(rubyMine.production) + "/s ($" + rubyMine.production * rubyMine.count + "/s total, " + rubyMine.percentage + "%)";;
-    let uBtn = document.getElementById('rubyMineUpgrade');
-    uBtn.innerHTML = "Upgrade (doubles production): $" + prettifyInt(rubyMine.upgradeCost);
-  }
 }
 
 let sapphireMine = {
@@ -400,35 +188,6 @@ let sapphireMine = {
   production: 1000,
   upgradeCost: 45000000,
   percentage: 0,
-
-  buy: () => {
-    if (money >= sapphireMine.cost) {
-      money -= sapphireMine.cost;
-
-      sapphireMine.count++;
-      sapphireMine.cost = Math.round(sapphireMine.cost * 1.1);
-
-      building.updateButton(sapphireMine);
-    }
-  },
-
-  upgrade: () => {
-    if (money >= sapphireMine.upgradeCost) {
-      money -= sapphireMine.upgradeCost;
-
-      sapphireMine.production *= 2;
-
-      sapphireMine.upgradeCost = Math.round(sapphireMine.upgradeCost * 10);
-      building.updateButton(sapphireMine);
-    }
-  },
-
-  updateButton: () => {
-    let btn = document.getElementById('sapphireMine');
-    btn.innerHTML = sapphireMine.count + " " + sapphireMine.name + " - costs $" + prettifyInt(sapphireMine.cost) + ", produces $" + prettifyInt(sapphireMine.production) + "/s ($" + sapphireMine.production * sapphireMine.count + "/s total, " + sapphireMine.percentage + "%)";;
-    let uBtn = document.getElementById('sapphireMineUpgrade');
-    uBtn.innerHTML = "Upgrade (doubles production): $" + prettifyInt(sapphireMine.upgradeCost);
-  }
 }
 
 let goldMine = {
@@ -438,35 +197,6 @@ let goldMine = {
   production: 5000,
   upgradeCost: 150000000,
   percentage: 0,
-
-  buy: () => {
-    if (money >= goldMine.cost) {
-      money -= goldMine.cost;
-
-      goldMine.count++;
-      goldMine.cost = Math.round(goldMine.cost * 1.1);
-
-      building.updateButton(goldMine);
-    }
-  },
-
-  upgrade: () => {
-    if (money >= goldMine.upgradeCost) {
-      money -= goldMine.upgradeCost;
-
-      goldMine.production *= 2;
-
-      goldMine.upgradeCost = Math.round(goldMine.upgradeCost * 10);
-      building.updateButton(goldMine);
-    }
-  },
-
-  updateButton: () => {
-    let btn = document.getElementById('goldMine');
-    btn.innerHTML = goldMine.count + " " + goldMine.name + " - costs $" + prettifyInt(goldMine.cost) + ", produces $" + prettifyInt(goldMine.production) + "/s ($" + goldMine.production * goldMine.count + "/s total, " + goldMine.percentage + "%)";;
-    let uBtn = document.getElementById('goldMineUpgrade');
-    uBtn.innerHTML = "Upgrade (doubles production): $" + prettifyInt(goldMine.upgradeCost);
-  }
 }
 
 let platinumMine = {
@@ -476,35 +206,6 @@ let platinumMine = {
   production: 12000,
   upgradeCost: 500000000,
   percentage: 0,
-
-  buy: () => {
-    if (money >= platinumMine.cost) {
-      money -= platinumMine.cost;
-
-      platinumMine.count++;
-      platinumMine.cost = Math.round(platinumMine.cost * 1.1);
-
-      building.updateButton(platinumMine);
-    }
-  },
-
-  upgrade: () => {
-    if (money >= platinumMine.upgradeCost) {
-      money -= platinumMine.upgradeCost;
-
-      platinumMine.production *= 2;
-
-      platinumMine.upgradeCost = Math.round(platinumMine.upgradeCost * 10);
-      building.updateButton(platinumMine);
-    }
-  },
-
-  updateButton: () => {
-    let btn = document.getElementById('platinumMine');
-    btn.innerHTML = platinumMine.count + " " + platinumMine.name + " - costs $" + prettifyInt(platinumMine.cost) + ", produces $" + prettifyInt(platinumMine.production) + "/s ($" + platinumMine.production * platinumMine.count + "/s total, " + platinumMine.percentage + "%)";;
-    let uBtn = document.getElementById('platinumMineUpgrade');
-    uBtn.innerHTML = "Upgrade (doubles production): $" + prettifyInt(platinumMine.upgradeCost);
-  }
 }
 
 let titaniumMine = {
@@ -514,35 +215,6 @@ let titaniumMine = {
   production: 25000,
   upgradeCost: 1500000000,
   percentage: 0,
-
-  buy: () => {
-    if (money >= titaniumMine.cost) {
-      money -= titaniumMine.cost;
-
-      titaniumMine.count++;
-      titaniumMine.cost = Math.round(titaniumMine.cost * 1.1);
-
-      building.updateButton(titaniumMine);
-    }
-  },
-
-  upgrade: () => {
-    if (money >= titaniumMine.upgradeCost) {
-      money -= titaniumMine.upgradeCost;
-
-      titaniumMine.production *= 2;
-
-      titaniumMine.upgradeCost = Math.round(titaniumMine.upgradeCost * 10);
-      building.updateButton(titaniumMine);
-    }
-  },
-
-  updateButton: () => {
-    let btn = document.getElementById('titaniumMine');
-    btn.innerHTML = titaniumMine.count + " " + titaniumMine.name + " - costs $" + prettifyInt(titaniumMine.cost) + ", produces $" + prettifyInt(titaniumMine.production) + "/s ($" + titaniumMine.production * titaniumMine.count + "/s total, " + titaniumMine.percentage + "%)";;
-    let uBtn = document.getElementById('titaniumMineUpgrade');
-    uBtn.innerHTML = "Upgrade (doubles production): $" + prettifyInt(titaniumMine.upgradeCost);
-  }
 }
 
 let uraniumMine = {
@@ -552,35 +224,6 @@ let uraniumMine = {
   production: 100000,
   upgradeCost: 10000000000,
   percentage: 0,
-
-  buy: () => {
-    if (money >= uraniumMine.cost) {
-      money -= uraniumMine.cost;
-
-      uraniumMine.count++;
-      uraniumMine.cost = Math.round(uraniumMine.cost * 1.1);
-
-      building.updateButton(uraniumMine);
-    }
-  },
-
-  upgrade: () => {
-    if (money >= uraniumMine.upgradeCost) {
-      money -= uraniumMine.upgradeCost;
-
-      uraniumMine.production *= 2;
-
-      uraniumMine.upgradeCost = Math.round(uraniumMine.upgradeCost * 10);
-      building.updateButton(uraniumMine);
-    }
-  },
-
-  updateButton: () => {
-    let btn = document.getElementById('uraniumMine');
-    btn.innerHTML = uraniumMine.count + " " + uraniumMine.name + " - costs $" + prettifyInt(uraniumMine.cost) + ", produces $" + prettifyInt(uraniumMine.production) + "/s ($" + uraniumMine.production * uraniumMine.count + "/s total, " + uraniumMine.percentage + "%)";;
-    let uBtn = document.getElementById('uraniumMineUpgrade');
-    uBtn.innerHTML = "Upgrade (doubles production): $" + prettifyInt(uraniumMine.upgradeCost);
-  }
 }
 
 let plutoniumMine = {
@@ -590,35 +233,6 @@ let plutoniumMine = {
   production: 250000,
   upgradeCost: 400 * billion,
   percentage: 0,
-
-  buy: () => {
-    if (money >= plutoniumMine.cost) {
-      money -= plutoniumMine.cost;
-
-      plutoniumMine.count++;
-      plutoniumMine.cost = Math.round(plutoniumMine.cost * 1.1);
-
-      building.updateButton(plutoniumMine);
-    }
-  },
-
-  upgrade: () => {
-    if (money >= plutoniumMine.upgradeCost) {
-      money -= plutoniumMine.upgradeCost;
-
-      plutoniumMine.production *= 2;
-
-      plutoniumMine.upgradeCost = Math.round(plutoniumMine.upgradeCost * 10);
-      building.updateButton(plutoniumMine);
-    }
-  },
-
-  updateButton: () => {
-    let btn = document.getElementById('plutoniumMine');
-    btn.innerHTML = plutoniumMine.count + " " + plutoniumMine.name + " - costs $" + prettifyInt(plutoniumMine.cost) + ", produces $" + prettifyInt(plutoniumMine.production) + "/s ($" + plutoniumMine.production * plutoniumMine.count + "/s total, " + plutoniumMine.percentage + "%)";;
-    let uBtn = document.getElementById('plutoniumMineUpgrade');
-    uBtn.innerHTML = "Upgrade (doubles production): $" + prettifyInt(plutoniumMine.upgradeCost);
-  }
 }
 
 let diamondMine = {
@@ -628,35 +242,6 @@ let diamondMine = {
   production: 800000,
   upgradeCost: 500 * billion,
   percentage: 0,
-
-  buy: () => {
-    if (money >= diamondMine.cost) {
-      money -= diamondMine.cost;
-
-      diamondMine.count++;
-      diamondMine.cost = Math.round(diamondMine.cost * 1.1);
-
-      building.updateButton(diamondMine);
-    }
-  },
-
-  upgrade: () => {
-    if (money >= diamondMine.upgradeCost) {
-      money -= diamondMine.upgradeCost;
-
-      diamondMine.production *= 2;
-
-      diamondMine.upgradeCost = Math.round(diamondMine.upgradeCost * 10);
-      building.updateButton(diamondMine);
-    }
-  },
-
-  updateButton: () => {
-    let btn = document.getElementById('diamondMine');
-    btn.innerHTML = diamondMine.count + " " + diamondMine.name + " - costs $" + prettifyInt(diamondMine.cost) + ", produces $" + prettifyInt(diamondMine.production) + "/s ($" + diamondMine.production * diamondMine.count + "/s total, " + diamondMine.percentage + "%)";;
-    let uBtn = document.getElementById('diamondMineUpgrade');
-    uBtn.innerHTML = "Upgrade (doubles production): $" + prettifyInt(diamondMine.upgradeCost);
-  }
 }
 
 let loadGame = () => {
@@ -679,11 +264,13 @@ let loadGame = () => {
        if (save.globalUpgrade.cost !== "undefined") globalUpgrade.cost = save.globalUpgrade.cost;
    }
 
-  if (typeof save.leadMine !== "undefined") {
+  if (typeof save.quarry !== "undefined") {
     if (typeof save.quarry.cost !== "undefined") quarry.cost = save.quarry.cost;
     if (typeof save.quarry.count !== "undefined") quarry.count = save.quarry.count;
     if (typeof save.quarry.production !== "undefined") quarry.production = save.quarry.production;
     if (typeof save.quarry.upgradeCost !== "undefined") quarry.upgradeCost = save.quarry.upgradeCost;
+    if (typeof save.quarry.factories !== "undefined") quarry.factories = save.quarry.factories;
+    if (typeof save.quarry.factoryCost !== "undefined") quarry.factoryCost = save.quarry.factoryCost;
   }
 
   if (typeof save.copperMine !== "undefined") {
@@ -691,6 +278,8 @@ let loadGame = () => {
     if (typeof save.copperMine.count !== "undefined") copperMine.count = save.copperMine.count;
     if (typeof save.copperMine.production !== "undefined") copperMine.production = save.copperMine.production;
     if (typeof save.copperMine.upgradeCost !== "undefined") copperMine.upgradeCost = save.copperMine.upgradeCost;
+    if (typeof save.copperMine.factories !== "undefined") copperMine.factories = save.copperMine.factories;
+    if (typeof save.copperMine.factoryCost !== "undefined") copperMine.factoryCost = save.copperMine.factoryCost;
   }
 
   if (typeof save.ironMine !== "undefined") {
@@ -698,6 +287,8 @@ let loadGame = () => {
     if (typeof save.ironMine.count !== "undefined") ironMine.count = save.ironMine.count;
     if (typeof save.ironMine.production !== "undefined") ironMine.production = save.ironMine.production
     if (typeof save.ironMine.upgradeCost !== "undefined") ironMine.upgradeCost = save.ironMine.upgradeCost;
+    if (typeof save.ironMine.factories !== "undefined") ironMine.factories = save.ironMine.factories;
+    if (typeof save.ironMine.factoryCost !== "undefined") ironMine.factoryCost = save.ironMine.factoryCost;
   }
 
   if (typeof save.silverMine !== "undefined") {
@@ -812,7 +403,7 @@ loadGame();
 setInterval(() => {
   let income = 0;
 
-  income += quarry.count * quarry.production;
+  income += Math.floor(quarry.count) * quarry.production;
   income += copperMine.count * copperMine.production;
   income += ironMine.count * ironMine.production;
   income += silverMine.count * silverMine.production;
@@ -831,57 +422,63 @@ setInterval(() => {
   income *= globalUpgrade.mod;
   income = Math.round(income * 10)/10;
 
-  quarry.percentage = Math.round(((quarry.production * quarry.count) / income) * 100)
+  let m = 100/71;
+
+  quarry.percentage = Math.round(((quarry.production * Math.floor(quarry.count)) / income) * 100 * m)
   building.updateButton(quarry);
 
-  copperMine.percentage = Math.round(((copperMine.production * copperMine.count) / income) * 100)
+  copperMine.percentage = Math.round(((copperMine.production * copperMine.count) / income) * 100 * m)
   building.updateButton(copperMine);
 
-  ironMine.percentage = Math.round(((ironMine.production * ironMine.count) / income) * 100)
+  ironMine.percentage = Math.round(((ironMine.production * ironMine.count) / income) * 100 * m)
   building.updateButton(ironMine);
 
-  silverMine.percentage = Math.round(((silverMine.production * silverMine.count) / income) * 100)
+  silverMine.percentage = Math.round(((silverMine.production * silverMine.count) / income) * 100 * m)
   building.updateButton(silverMine);
 
-  tungstenMine.percentage = Math.round(((tungstenMine.production * tungstenMine.count) / income) * 100)
+  tungstenMine.percentage = Math.round(((tungstenMine.production * tungstenMine.count) / income) * 100 * m)
   building.updateButton(tungstenMine);
 
-  leadMine.percentage = Math.round(((leadMine.production * leadMine.count) / income) * 100)
+  leadMine.percentage = Math.round(((leadMine.production * leadMine.count) / income) * 100 * m)
   building.updateButton(leadMine);
 
-  quartzMine.percentage = Math.round(((quartzMine.production * quartzMine.count) / income) * 100)
+  quartzMine.percentage = Math.round(((quartzMine.production * quartzMine.count) / income) * 100 * m)
   building.updateButton(quartzMine);
 
-  rubyMine.percentage = Math.round(((rubyMine.production * rubyMine.count) / income) * 100)
+  rubyMine.percentage = Math.round(((rubyMine.production * rubyMine.count) / income) * 100 * m)
   building.updateButton(rubyMine);
 
-  sapphireMine.percentage = Math.round(((sapphireMine.production * sapphireMine.count) / income) * 100)
+  sapphireMine.percentage = Math.round(((sapphireMine.production * sapphireMine.count) / income) * 100 * m)
   building.updateButton(sapphireMine);
 
-  goldMine.percentage = Math.round(((goldMine.production * goldMine.count) / income) * 100)
+  goldMine.percentage = Math.round(((goldMine.production * goldMine.count) / income) * 100 * m)
   building.updateButton(goldMine);
 
-  platinumMine.percentage = Math.round(((platinumMine.production * platinumMine.count) / income) * 100)
+  platinumMine.percentage = Math.round(((platinumMine.production * platinumMine.count) / income) * 100 * m)
   building.updateButton(platinumMine);
 
-  titaniumMine.percentage = Math.round(((titaniumMine.production * titaniumMine.count) / income) * 100)
+  titaniumMine.percentage = Math.round(((titaniumMine.production * titaniumMine.count) / income) * 100 * m)
   building.updateButton(titaniumMine);
 
-  uraniumMine.percentage = Math.round(((uraniumMine.production * uraniumMine.count) / income) * 100)
+  uraniumMine.percentage = Math.round(((uraniumMine.production * uraniumMine.count) / income) * 100 * m)
   building.updateButton(uraniumMine);
 
-  plutoniumMine.percentage = Math.round(((plutoniumMine.production * plutoniumMine.count) / income) * 100)
+  plutoniumMine.percentage = Math.round(((plutoniumMine.production * plutoniumMine.count) / income) * 100 * m)
   building.updateButton(plutoniumMine);
 
-  diamondMine.percentage = Math.round(((diamondMine.production * diamondMine.count) / income) * 100)
+  diamondMine.percentage = Math.round(((diamondMine.production * diamondMine.count) / income) * 100 * m)
   building.updateButton(diamondMine);
 
   income /= 10;
 
+  quarry.count += quarry.factories/10;
+  copperMine.count += copperMine.factories/10;
+  ironMine.count += ironMine.factories/10;
+
   money += income;
 
   moneyDisplay.innerHTML = '$' + prettifyInt(Math.round(money*10)/10);
-  incomeDisplay.innerHTML = "$" + prettifyInt(income*10) + "/s";
+  incomeDisplay.innerHTML = "$" + prettifyInt(Math.round(income*100)/10) + "/s";
   document.getElementById('title').innerHTML = "Idle Miner - $" + prettifyInt(money);
 }, 100)
 

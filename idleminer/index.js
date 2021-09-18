@@ -473,7 +473,7 @@ setInterval(() => {
 
   income /= 10;
 
-  if (tick % 100 === 0) {
+  if (tick % 10 === 0) {
     quarry.count += quarry.factories/10;
     copperMine.count += copperMine.factories/10;
     ironMine.count += ironMine.factories/10;

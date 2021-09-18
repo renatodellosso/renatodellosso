@@ -20,7 +20,7 @@ let building = {
         money -= b.cost;
 
         b.count++;
-        b.cost = Math.round(b.cost * 1.1);
+        b.cost = Math.round(b.cost * 1.5);
 
         building.updateButton(b);
       }
@@ -400,6 +400,8 @@ let loadGame = () => {
 
 loadGame();
 
+let tick = 1;
+
 setInterval(() => {
   let income = 0;
 
@@ -471,15 +473,20 @@ setInterval(() => {
 
   income /= 10;
 
-  quarry.count += quarry.factories/10;
-  copperMine.count += copperMine.factories/10;
-  ironMine.count += ironMine.factories/10;
+  if (tick % 100 === 0) {
+    quarry.count += quarry.factories/10;
+    copperMine.count += copperMine.factories/10;
+    ironMine.count += ironMine.factories/10;
+  }
 
   money += income;
 
   moneyDisplay.innerHTML = '$' + prettifyInt(Math.round(money*10)/10);
   incomeDisplay.innerHTML = "$" + prettifyInt(Math.round(income*100)/10) + "/s";
   document.getElementById('title').innerHTML = "Idle Miner - $" + prettifyInt(Math.round(money*10)/10);
+
+  tick++;
+  if (tick > 600) tick = 1;
 }, 100)
 
 let saveGame = () => {

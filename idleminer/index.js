@@ -20,7 +20,7 @@ let building = {
         money -= b.cost;
 
         b.count++;
-        b.cost = Math.round(b.cost * 1.5);
+        b.cost = Math.round(b.cost * 1.1);
 
         building.updateButton(b);
       }
@@ -31,7 +31,7 @@ let building = {
         money -= b.factoryCost;
 
         b.factories++;
-        b.factoryCost = Math.round(b.factoryCost * 1.1);
+        b.factoryCost = Math.round(b.factoryCost * 1.5);
 
         building.updateButton(b);
       }
@@ -475,8 +475,11 @@ setInterval(() => {
 
   if (tick % 10 === 0) {
     quarry.count += quarry.factories/10;
+    quarry.cost = Math.round(quarry.cost * 1.1);
     copperMine.count += copperMine.factories/10;
+    copperMine.cost = Math.round(copperMine.cost * 1.1);
     ironMine.count += ironMine.factories/10;
+    ironMine.cost = Math.round(ironMine.cost * 1.1);
   }
 
   money += income;

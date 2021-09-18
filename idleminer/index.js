@@ -479,7 +479,7 @@ setInterval(() => {
 
   moneyDisplay.innerHTML = '$' + prettifyInt(Math.round(money*10)/10);
   incomeDisplay.innerHTML = "$" + prettifyInt(Math.round(income*100)/10) + "/s";
-  document.getElementById('title').innerHTML = "Idle Miner - $" + prettifyInt(money);
+  document.getElementById('title').innerHTML = "Idle Miner - $" + prettifyInt(Math.round(money*10)/10);
 }, 100)
 
 let saveGame = () => {

@@ -522,7 +522,7 @@ setInterval(() => {
 
   let p = d - lastTick;
 
-  if (false) {
+  if (true) {
     console.log("Time since last tick: " + p);
     console.log("Ticks/sec: " + Math.round(1000/p));
   }

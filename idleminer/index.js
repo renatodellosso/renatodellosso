@@ -448,9 +448,10 @@ let loadGame = () => {
 
 loadGame();
 
-let tick = 1;
+let lastTick = new Date().getTime();
 
 setInterval(() => {
+  let d = new Date().getTime();
   let income = 0;
 
   income += Math.floor(quarry.count) * quarry.production;
@@ -519,7 +520,17 @@ setInterval(() => {
   diamondMine.percentage = Math.round(((diamondMine.production * diamondMine.count) / income) * 100 * m)
   building.updateButton(diamondMine);
 
-  income /= 10;
+  let p = d - lastTick;
+
+  if (false) {
+    console.log("Time since last tick: " + p);
+    console.log("Ticks/sec: " + Math.round(1000/p));
+  }
+
+  income /= 1000;
+  income *= p;
+
+  lastTick = d;
 
   quarry.count += quarry.factories/100;
   copperMine.count += copperMine.factories/100;
@@ -542,9 +553,6 @@ setInterval(() => {
   moneyDisplay.innerHTML = '$' + prettifyInt(Math.round(money*10)/10);
   incomeDisplay.innerHTML = "$" + prettifyInt(Math.round(income*100)/10) + "/s";
   document.getElementById('title').innerHTML = "Idle Miner - $" + prettifyInt(Math.round(money*10)/10);
-
-  tick++;
-  if (tick > 600) tick = 1;
 }, 100)
 
 let saveGame = () => {

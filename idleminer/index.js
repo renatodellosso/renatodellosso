@@ -5,6 +5,8 @@ let money = 0;
 let moneyDisplay = document.getElementById('money');
 let incomeDisplay = document.getElementById('income');
 
+let loggingTicks = false;
+
 let million = 1000000;
 let billion = million * 1000;
 let trillion = billion * 1000;
@@ -522,15 +524,19 @@ setInterval(() => {
 
   let p = d - lastTick;
 
-  if (true) {
+  if (loggingTicks) {
     console.log("Time since last tick: " + p);
     console.log("Ticks/sec: " + Math.round(1000/p));
   }
+
+  incomeDisplay.innerHTML = "$" + prettifyInt(Math.round(income*10)/10) + "/s";
 
   income /= 1000;
   income *= p;
 
   lastTick = d;
+
+  document.getElementById('actincome').innerHTML = "$" + prettifyInt(Math.round(income*100)/10) + "/s";
 
   quarry.count += quarry.factories/100;
   copperMine.count += copperMine.factories/100;
@@ -551,7 +557,6 @@ setInterval(() => {
   money += income;
 
   moneyDisplay.innerHTML = '$' + prettifyInt(Math.round(money*10)/10);
-  incomeDisplay.innerHTML = "$" + prettifyInt(Math.round(income*100)/10) + "/s";
   document.getElementById('title').innerHTML = "Idle Miner - $" + prettifyInt(Math.round(money*10)/10);
 }, 100)
 

@@ -1,9 +1,45 @@
 body, button {
   background-color: #1B2631;
   color: #EBEDEF;
+  font-family: 'Gemunu Libre', sans-serif;
+  font-weight: bold;
+  font-size: 14.85px;
 }
 
 button {
   background-color: #212F3C;
   border: 1px solid black;
+  padding: 5px 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #96FFB2;
+  color: black;
+}
+
+button:active {
+  background-color: #016400;
+}
+
+#manualClick {
+  padding: 10px 16px;
+  font-size: 24px;
+}
+
+#manualClick:hover {
+  color: white;
+}
+
+#manualClick:active {
+  transition: 0;
+  animation: buttonanimation .5s linear 0s infinite;
+}
+
+@keyframes buttonanimation {
+  0% {transform: rotate(5deg);}
+  25% {transform: rotate(-5deg);}
+  50% {transform: rotate(5deg);}
+  75% {transform: rotate(-5deg);}
+  100% {transform: rotate(5deg);}
 }

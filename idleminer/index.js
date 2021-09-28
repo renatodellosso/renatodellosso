@@ -1,6 +1,6 @@
 //Ideas:
 
-let manualClick = document.getElementById('manual click');
+let manualClick = document.getElementById('manualClick');
 let money = 0;
 let moneyDisplay = document.getElementById('money');
 let incomeDisplay = document.getElementById('income');

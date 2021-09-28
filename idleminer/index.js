@@ -536,29 +536,29 @@ setInterval(() => {
 
   lastTick = d;
 
-  document.getElementById('actincome').innerHTML = "$" + prettifyInt(Math.round(income*100)/10) + "/s";
+  document.getElementById('actincome').innerHTML = "$" + prettifyInt(Math.round(income*400)/10) + "/s";
 
-  quarry.count += quarry.factories/100;
-  copperMine.count += copperMine.factories/100;
-  ironMine.count += ironMine.factories/100;
-  silverMine.count += silverMine.factories/100;
-  tungstenMine.count += tungstenMine.factories/100;
-  leadMine.count += leadMine.factories/100;
-  quartzMine.count += quartzMine.factories/100;
-  rubyMine.count += rubyMine.factories/100;
-  sapphireMine.count += sapphireMine.factories/100;
-  goldMine.count += goldMine.factories/100;
-  platinumMine.count += platinumMine.factories/100;
-  titaniumMine.count += titaniumMine.factories/100;
-  uraniumMine.count += uraniumMine.factories/100;
-  plutoniumMine.count += plutoniumMine.factories/100;
-  diamondMine.count += diamondMine.factories/100;
+  quarry.count += quarry.factories/400;
+  copperMine.count += copperMine.factories/400;
+  ironMine.count += ironMine.factories/400;
+  silverMine.count += silverMine.factories/400;
+  tungstenMine.count += tungstenMine.factories/400;
+  leadMine.count += leadMine.factories/400;
+  quartzMine.count += quartzMine.factories/400;
+  rubyMine.count += rubyMine.factories/400;
+  sapphireMine.count += sapphireMine.factories/400;
+  goldMine.count += goldMine.factories/400;
+  platinumMine.count += platinumMine.factories/400;
+  titaniumMine.count += titaniumMine.factories/400;
+  uraniumMine.count += uraniumMine.factories/400;
+  plutoniumMine.count += plutoniumMine.factories/400;
+  diamondMine.count += diamondMine.factories/400;
 
   money += income;
 
   moneyDisplay.innerHTML = '$' + prettifyInt(Math.round(money*10)/10);
   document.getElementById('title').innerHTML = "Idle Miner - $" + prettifyInt(Math.round(money*10)/10);
-}, 100)
+}, 25)
 
 let saveGame = () => {
   let save = {
@@ -588,9 +588,9 @@ let saveGame = () => {
 }
 
 setInterval(() => {
-  money = Math.round(money * 10)/10;
+  money = Math.round(money * 100)/100;
   moneyDisplay.innerHTML = '$' + prettifyInt(money);
-}, 5)
+}, 25)
 
 setInterval(saveGame, 10000);
 

@@ -52,7 +52,7 @@ let building = {
 
     updateButton: (b) => {
       let btn = document.getElementById(b.name);
-      btn.innerHTML = Math.floor(b.count) + " " + b.name + " - costs $" + prettifyInt(Math.floor(b.cost)) + ", produces $" + prettifyInt(b.production) + "/s ($" + b.production * Math.floor(b.count) + "/s total, " + b.percentage + "%)";;
+      btn.innerHTML = Math.floor(b.count) + " " + b.name + " - costs $" + prettifyInt(Math.floor(b.cost)) + ", produces $" + prettifyInt(b.production) + "/s ($" + prettifyInt(b.production * Math.floor(b.count)) + "/s total, " + b.percentage + "%)";;
       let uBtn = document.getElementById(b.name + 'Upgrade');
       uBtn.innerHTML = "Upgrade (doubles production): $" + prettifyInt(b.upgradeCost);
       if (typeof b.factories !== "undefined") {

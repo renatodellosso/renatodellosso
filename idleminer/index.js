@@ -56,7 +56,7 @@ let building = {
       let uBtn = document.getElementById(b.name + 'Upgrade');
       uBtn.innerHTML = "Upgrade (doubles production): $" + prettifyInt(b.upgradeCost);
       if (typeof b.factories !== "undefined") {
-        document.getElementById(b.name + 'Factory').innerHTML = b.factories + " Factories - produces 1 " + b.name + "/s, costs $" + prettifyInt(b.factoryCost);
+        document.getElementById(b.name + 'Factory').innerHTML = b.factories + " Factories - produces .1 " + b.name + "/s, costs $" + prettifyInt(b.factoryCost);
       }
     }
 }

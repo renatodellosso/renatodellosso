@@ -2,7 +2,7 @@
 This code is of the start to making the chrome dino game.
 The dino can jump, but no other logic is in place.
 
-Goals: 
+Goals:
 - Make the cactus approach the dino
 - Require the dino to jump over the cactus
 - Add death
@@ -45,7 +45,7 @@ let dino = {
         dino.jumping = true;
         let jumpHeight = 150; // Max jump height
         let jumpSpeed = 15; // How often frames are updates (ms)
-        let jumpInterval = 5; // Pixels moved per frame 
+        let jumpInterval = 5; // Pixels moved per frame
         let jumpingInterval = setInterval(() => { // Create an interval, called every jumpSpeed milliseconds, that increases the dino's height.
             dino.y += jumpInterval;
             if(dino.y > jumpHeight) {
@@ -82,7 +82,7 @@ let cactus = {
     ySize: 105,
     move: () => {
         speed = 1;
-        moveSpeed = 1.5;
+        moveSpeed = 1.75;
         let moveInterval = setInterval(() => {
             cactus.x -= moveSpeed;
             if (cactus.x < -50) {

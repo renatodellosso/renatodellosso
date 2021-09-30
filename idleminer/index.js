@@ -270,8 +270,11 @@ let diamondMine = {
   factoryCost: 50 * trillion,
 }
 
-let loadGame = () => {
-  let save = JSON.parse(localStorage.getItem("save"));
+let loadGame = (fromText) => {
+  let save;
+
+  if (!fromText) save = JSON.parse(localStorage.getItem("save"));
+  else save = JSON.parse(prompt("Paste your save text here:"));
 
   if (save !== null) {
 
@@ -448,7 +451,7 @@ let loadGame = () => {
   building.updateButton(diamondMine);
 }
 
-loadGame();
+loadGame(false);
 
 let lastTick = new Date().getTime();
 
@@ -585,6 +588,45 @@ let saveGame = () => {
   localStorage.setItem("save", JSON.stringify(save));
 
   console.log("Saved game")
+}
+
+let saveToText = () => {
+  let save = {
+    money: money,
+    clicker: clicker,
+    globalUpgrade: globalUpgrade,
+    quarry: quarry,
+    copperMine: copperMine,
+    ironMine: ironMine,
+    silverMine: silverMine,
+    tungstenMine: tungstenMine,
+    leadMine: leadMine,
+    quartzMine: quartzMine,
+    rubyMine: rubyMine,
+    sapphireMine: sapphireMine,
+    goldMine: goldMine,
+    platinumMine: platinumMine,
+    titaniumMine: titaniumMine,
+    uraniumMine: uraniumMine,
+    plutoniumMine: plutoniumMine,
+    diamondMine: diamondMine,
+  }
+
+  let text = document.querySelector('#textSave')
+  let r = document.createRange();
+
+  text.innerHTML = JSON.stringify(save);
+
+  r.selectNodeContents(text);
+
+  let s = window.getSelection();
+  s.removeAllRanges();
+  s.addRange(r);
+
+  document.execCommand('copy');
+  alert("Save copied to the clipboard.");
+
+  text.innerHTML = "";
 }
 
 setInterval(() => {

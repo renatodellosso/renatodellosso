@@ -56,7 +56,7 @@ let building = {
 
     updateButton: (b) => {
       let btn = document.getElementById(b.name);
-      btn.innerHTML = Math.floor(b.count) + " " + b.name + " - costs $" + prettifyInt(Math.floor(b.cost)) + ", produces $" + prettifyInt(b.production) + "/s ($" + prettifyInt(b.production * Math.floor(b.count)) + "/s total, " + b.percentage + "%)";;
+      btn.innerHTML = Math.floor(b.count) + " " + b.name + " - costs $" + prettifyInt(Math.floor(b.cost)) + ", produces $" + prettifyInt(b.production) + "/s ($" + prettifyInt(Math.round(b.production * Math.floor(b.count) * globalUpgrade.mod * 100)/100) + "/s total, " + b.percentage + "%)";;
       let uBtn = document.getElementById(b.name + 'Upgrade');
       uBtn.innerHTML = "Upgrade (doubles production): $" + prettifyInt(b.upgradeCost);
       if (typeof b.factories !== "undefined") {
@@ -606,7 +606,7 @@ setInterval(() => {
   income += oganessonMine.count * oganessonMine.production;
   income += antimatterMine.count * antimatterMine.production;
 
-  income = Math.round(income * 10)/10;
+  income = Math.round(income * 100)/100;
 
   let m = 1; //100/71;
 
@@ -674,13 +674,14 @@ setInterval(() => {
   }
 
   incomeDisplay.innerHTML = "$" + prettifyInt(Math.round(income*10)/10) + "/s";
+  document.getElementById('baseIncome').innerHTML = "$" + prettifyInt(Math.round((income/globalUpgrade.mod)*100)/100) + "/s";
 
   income /= 1000;
   income *= p;
 
   lastTick = d;
 
-  document.getElementById('actincome').innerHTML = "$" + prettifyInt(Math.round(income*400)/10) + "/s";
+  document.getElementById('actIncome').innerHTML = "$" + prettifyInt(Math.round(income*4000)/100) + "/s";
 
   quarry.count += quarry.factories/400;
   copperMine.count += copperMine.factories/400;
@@ -703,8 +704,8 @@ setInterval(() => {
 
   money += income;
 
-  moneyDisplay.innerHTML = '$' + prettifyInt(Math.round(money*10)/10);
-  document.getElementById('title').innerHTML = "Idle Miner - $" + prettifyInt(Math.round(money*10)/10);
+  moneyDisplay.innerHTML = '$' + prettifyInt(Math.round(money*100)/100);
+  document.getElementById('title').innerHTML = "Idle Miner - $" + prettifyInt(Math.round(money*100)/100);
   updatePrestige();
 }, 25)
 

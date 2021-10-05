@@ -5,11 +5,15 @@ let money = 0;
 let moneyDisplay = document.getElementById('money');
 let incomeDisplay = document.getElementById('income');
 
+let prestige = 0;
+
 let loggingTicks = false;
 
 let million = 1000000;
 let billion = million * 1000;
 let trillion = billion * 1000;
+let quadrillion = trillion * 1000;
+let quintillion = quadrillion * 1000;
 
 let prettifyInt = (i) => {
     return i.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -270,6 +274,91 @@ let diamondMine = {
   factoryCost: 50 * trillion,
 }
 
+let emeraldMine = {
+  name: "Emerald Mines",
+  cost: 1 * trillion,
+  count: 0,
+  production: 15 * million,
+  upgradeCost: 10 * trillion,
+  percentage: 0,
+  factories: 0,
+  factoryCost: 250 * trillion,
+}
+
+let oganessonMine = {
+  name: "Oganesson Mines",
+  cost: 25 * trillion,
+  count: 0,
+  production: 400 * million,
+  upgradeCost: 250 * trillion,
+  percentage: 0,
+  factories: 0,
+  factoryCost: 1.25 * quadrillion,
+}
+
+let antimatterMine = {
+  name: "Antimatter Mines",
+  cost: 250 * trillion,
+  count: 0,
+  production: 5 * billion,
+  upgradeCost: 2 * quadrillion,
+  percentage: 0,
+  factories: 0,
+  factoryCost: 5 * quadrillion,
+}
+
+let updatePrestige = () => {
+  document.getElementById('prestige').innerHTML = "Prestige, requires $1T, money will be converted to " + Math.round(money/trillion) + "% bonus production"
+}
+
+let attemptPrestige = () => {
+  if (money >= trillion) {
+    let bonus = Math.round(money/trillion);
+
+    console.log(prestige);
+    prestige += bonus;
+
+    console.log(bonus);
+    console.log(prestige);
+
+    localStorage.setItem("prestige", prestige);
+    localStorage.removeItem("save");
+    location.reload();
+  }
+}
+
+
+let saveGame = () => {
+  let save = {
+    money: money,
+    clicker: clicker,
+    globalUpgrade: globalUpgrade,
+    prestige: prestige,
+    quarry: quarry,
+    copperMine: copperMine,
+    ironMine: ironMine,
+    silverMine: silverMine,
+    tungstenMine: tungstenMine,
+    leadMine: leadMine,
+    quartzMine: quartzMine,
+    rubyMine: rubyMine,
+    sapphireMine: sapphireMine,
+    goldMine: goldMine,
+    platinumMine: platinumMine,
+    titaniumMine: titaniumMine,
+    uraniumMine: uraniumMine,
+    plutoniumMine: plutoniumMine,
+    diamondMine: diamondMine,
+    emeraldMine: emeraldMine,
+    oganessonMine: oganessonMine,
+    antimatterMine: antimatterMine,
+  }
+
+  localStorage.setItem("save", JSON.stringify(save));
+
+  console.log("Saved game")
+}
+
 let loadGame = (fromText) => {
   let save;
 
@@ -290,7 +379,7 @@ let loadGame = (fromText) => {
 
    if (typeof save.globalUpgrade !== "undefined") {
      if (save.globalUpgrade.mod !== "undefined") globalUpgrade.mod = save.globalUpgrade.mod;
-       if (save.globalUpgrade.cost !== "undefined") globalUpgrade.cost = save.globalUpgrade.cost;
+     if (save.globalUpgrade.cost !== "undefined") globalUpgrade.cost = save.globalUpgrade.cost;
    }
 
   if (typeof save.quarry !== "undefined") {
@@ -428,7 +517,46 @@ let loadGame = (fromText) => {
     if (typeof save.diamondMine.factoryCost !== "undefined") diamondMine.factoryCost = save.diamondMine.factoryCost;
   }
 
+  if (typeof save.emeraldMine !== "undefined") {
+    if (typeof save.emeraldMine.cost !== "undefined") emeraldMine.cost = save.emeraldMine.cost;
+    if (typeof save.emeraldMine.count !== "undefined") emeraldMine.count = save.emeraldMine.count;
+    if (typeof save.emeraldMine.production !== "undefined") emeraldMine.production = save.emeraldMine.production;
+    if (typeof save.emeraldMine.upgradeCost !== "undefined") emeraldMine.upgradeCost = save.emeraldMine.upgradeCost;
+    if (typeof save.emeraldMine.factories !== "undefined") emeraldMine.factories = save.emeraldMine.factories;
+    if (typeof save.emeraldMine.factoryCost !== "undefined") emeraldMine.factoryCost = save.emeraldMine.factoryCost;
+  }
+
+  if (typeof save.oganessonMine !== "undefined") {
+    if (typeof save.oganessonMine.cost !== "undefined") oganessonMine.cost = save.oganessonMine.cost;
+    if (typeof save.oganessonMine.count !== "undefined") oganessonMine.count = save.oganessonMine.count;
+    if (typeof save.oganessonMine.production !== "undefined") oganessonMine.production = save.oganessonMine.production;
+    if (typeof save.oganessonMine.upgradeCost !== "undefined") oganessonMine.upgradeCost = save.oganessonMine.upgradeCost;
+    if (typeof save.oganessonMine.factories !== "undefined") oganessonMine.factories = save.oganessonMine.factories;
+    if (typeof save.oganessonMine.factoryCost !== "undefined") oganessonMine.factoryCost = save.oganessonMine.factoryCost;
+  }
+
+  if (typeof save.antimatterMine !== "undefined") {
+    if (typeof save.antimatterMine.cost !== "undefined") antimatterMine.cost = save.antimatterMine.cost;
+    if (typeof save.antimatterMine.count !== "undefined") antimatterMine.count = save.antimatterMine.count;
+    if (typeof save.antimatterMine.production !== "undefined") antimatterMine.production = save.antimatterMine.production;
+    if (typeof save.antimatterMine.upgradeCost !== "undefined") antimatterMine.upgradeCost = save.antimatterMine.upgradeCost;
+    if (typeof save.antimatterMine.factories !== "undefined") antimatterMine.factories = save.antimatterMine.factories;
+    if (typeof save.antimatterMine.factoryCost !== "undefined") antimatterMine.factoryCost = save.antimatterMine.factoryCost;
+  }
+
+  if (typeof save.prestige !== "undefined") {
+    prestige = save.prestige;
+  }
+
   console.log("Loaded game");
+  } else {
+    let p = localStorage.getItem("prestige");
+    if (p !== null) {
+      prestige = parseInt(p);
+      globalUpgrade.mod += prestige/100;
+      localStorage.removeItem("prestige");
+      saveGame();
+    }
   }
 
   clicker.updateButton();
@@ -474,8 +602,10 @@ setInterval(() => {
   income += uraniumMine.count * uraniumMine.production;
   income += plutoniumMine.count * plutoniumMine.production;
   income += diamondMine.count * diamondMine.production;
+  income += emeraldMine.count * emeraldMine.production;
+  income += oganessonMine.count * oganessonMine.production;
+  income += antimatterMine.count * antimatterMine.production;
 
-  income *= globalUpgrade.mod;
   income = Math.round(income * 10)/10;
 
   let m = 1; //100/71;
@@ -525,6 +655,17 @@ setInterval(() => {
   diamondMine.percentage = Math.round(((diamondMine.production * diamondMine.count) / income) * 100 * m)
   building.updateButton(diamondMine);
 
+  emeraldMine.percentage = Math.round(((emeraldMine.production * emeraldMine.count) / income) * 100 * m)
+  building.updateButton(emeraldMine);
+
+  oganessonMine.percentage = Math.round(((oganessonMine.production * oganessonMine.count) / income) * 100 * m)
+  building.updateButton(oganessonMine);
+
+  antimatterMine.percentage = Math.round(((antimatterMine.production * antimatterMine.count) / income) * 100 * m)
+  building.updateButton(antimatterMine);
+
+  income *= globalUpgrade.mod;
+
   let p = d - lastTick;
 
   if (loggingTicks) {
@@ -556,39 +697,16 @@ setInterval(() => {
   uraniumMine.count += uraniumMine.factories/400;
   plutoniumMine.count += plutoniumMine.factories/400;
   diamondMine.count += diamondMine.factories/400;
+  emeraldMine.count += emeraldMine.factories/400;
+  oganessonMine.count += oganessonMine.factories/400;
+  antimatterMine.count += antimatterMine.factories/400;
 
   money += income;
 
   moneyDisplay.innerHTML = '$' + prettifyInt(Math.round(money*10)/10);
   document.getElementById('title').innerHTML = "Idle Miner - $" + prettifyInt(Math.round(money*10)/10);
+  updatePrestige();
 }, 25)
-
-let saveGame = () => {
-  let save = {
-    money: money,
-    clicker: clicker,
-    globalUpgrade: globalUpgrade,
-    quarry: quarry,
-    copperMine: copperMine,
-    ironMine: ironMine,
-    silverMine: silverMine,
-    tungstenMine: tungstenMine,
-    leadMine: leadMine,
-    quartzMine: quartzMine,
-    rubyMine: rubyMine,
-    sapphireMine: sapphireMine,
-    goldMine: goldMine,
-    platinumMine: platinumMine,
-    titaniumMine: titaniumMine,
-    uraniumMine: uraniumMine,
-    plutoniumMine: plutoniumMine,
-    diamondMine: diamondMine,
-  }
-
-  localStorage.setItem("save", JSON.stringify(save));
-
-  console.log("Saved game")
-}
 
 let saveToText = () => {
   let save = {

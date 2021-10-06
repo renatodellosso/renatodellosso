@@ -356,6 +356,12 @@ let saveGame = () => {
 
   localStorage.setItem("save", JSON.stringify(save));
 
+  gtag('event', 'save', {
+    'event_category': 'save',
+    'event_label': 'save',
+    'value': money
+  })
+
   console.log("Saved game")
 }
 

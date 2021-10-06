@@ -321,6 +321,12 @@ let attemptPrestige = () => {
     console.log(bonus);
     console.log(prestige);
 
+    gtag('event', 'prestige', {
+      'event_category': 'engagement',
+      'event_label': 'prestige',
+      'value': prestige
+    })
+
     localStorage.setItem("prestige", prestige);
     localStorage.removeItem("save");
     location.reload();

@@ -71,11 +71,18 @@ let ai = {
     for (var i = 0; i < ai.states.length; i++) {
       let s = ai.states[i];
 
-      if(s.state == board) {
-        return ai.states[i].moves;
+      if(JSON.stringify(s.state) == JSON.stringify(board)) {
+        console.log("Found state");
+        if(ai.states[i].moves.length != 0) return ai.states[i].moves;
+        else {
+          console.log("Resetting state");
+          ai.states[i] = new State();
+          return ai.states[i].moves;
+        }
       }
     }
 
+    console.log("Added new state");
     ai.states.push(new State());
     return ai.states[ai.states.length-1].moves;
   },

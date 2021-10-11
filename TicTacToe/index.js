@@ -2,7 +2,7 @@ let canvas = document.getElementById('canvas');
 let ctx = canvas.getContext('2d');
 let text = document.getElementById('text');
 
-let training = true;
+let training = false;
 
 //Draw the board
 ctx.strokeStyle = 'black';

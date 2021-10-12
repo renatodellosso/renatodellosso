@@ -15,8 +15,27 @@ let trillion = billion * 1000;
 let quadrillion = trillion * 1000;
 let quintillion = quadrillion * 1000;
 
+let prettifyIntBasic = (i) => {
+  return Math.floor(i).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
 let prettifyInt = (i) => {
-    return i.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  let l = Math.round(i).toString().length;
+  // console.log(l);
+
+  let labels = ["Million", "Billion", "Trillion", "Quadrillion", "Quintillion", "Sextillion", "Septillion", "Octillion", "Nonillion", "Decillion", "Undecillion", "Duodecillion", "Tredecillion", "Quattuordecillion", "Quindecillion"];
+
+  if (l <= 6 || money.toString().includes("e")) return prettifyIntBasic(i);
+
+  // console.log(l <= 24)
+
+  for (var x = 0; x < labels.length; x++) {
+    if (l <= x * 3 + 9) {
+      return (Math.round((i * 100)/(Math.pow(10, 6 + (x*3))))/100).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " " + labels[x];
+    }
+  }
+
+  return prettifyIntBasic(i);
 }
 
 let building = {
@@ -60,7 +79,7 @@ let building = {
       let uBtn = document.getElementById(b.name + 'Upgrade');
       uBtn.innerHTML = "Upgrade (doubles production): $" + prettifyInt(b.upgradeCost);
       if (typeof b.factories !== "undefined") {
-        document.getElementById(b.name + 'Factory').innerHTML = b.factories + " Factories - produces .1 " + b.name + "/s, costs $" + prettifyInt(b.factoryCost);
+        document.getElementById(b.name + 'Factory').innerHTML = b.factories + " Factories - produces 1 " + b.name + " every 10s, costs $" + prettifyInt(b.factoryCost);
       }
     }
 }

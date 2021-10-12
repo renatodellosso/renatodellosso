@@ -359,6 +359,7 @@ let saveGame = () => {
     clicker: clicker,
     globalUpgrade: globalUpgrade,
     prestige: prestige,
+    logOut: new Date().getTime(),
     quarry: quarry,
     copperMine: copperMine,
     ironMine: ironMine,
@@ -389,6 +390,8 @@ let saveGame = () => {
 
   console.log("Saved game")
 }
+
+let income;
 
 let loadGame = (fromText) => {
   let save;
@@ -579,6 +582,14 @@ let loadGame = (fromText) => {
     prestige = save.prestige;
   }
 
+  if (typeof save.logOut !== "undefined") {
+    let s = setInterval(() => {
+      money += Math.round((new Date().getTime() - save.logOut) * (income/2000));
+      console.log("Gained $" + Math.round((new Date().getTime() - save.logOut) * (income/2000)) + " from offline production")
+      clearInterval(s);
+    }, 1000);
+  }
+
   console.log("Loaded game");
   } else {
     let p = localStorage.getItem("prestige");
@@ -593,21 +604,21 @@ let loadGame = (fromText) => {
   clicker.updateButton();
   globalUpgrade.updateButton();
 
-  building.updateButton(quarry);
-  building.updateButton(copperMine);
-  building.updateButton(ironMine);
-  building.updateButton(silverMine);
-  building.updateButton(tungstenMine);
-  building.updateButton(leadMine);
-  building.updateButton(quartzMine);
-  building.updateButton(rubyMine);
-  building.updateButton(sapphireMine);
-  building.updateButton(goldMine);
-  building.updateButton(platinumMine);
-  building.updateButton(titaniumMine);
-  building.updateButton(uraniumMine);
-  building.updateButton(plutoniumMine);
-  building.updateButton(diamondMine);
+  // building.updateButton(quarry);
+  // building.updateButton(copperMine);
+  // building.updateButton(ironMine);
+  // building.updateButton(silverMine);
+  // building.updateButton(tungstenMine);
+  // building.updateButton(leadMine);
+  // building.updateButton(quartzMine);
+  // building.updateButton(rubyMine);
+  // building.updateButton(sapphireMine);
+  // building.updateButton(goldMine);
+  // building.updateButton(platinumMine);
+  // building.updateButton(titaniumMine);
+  // building.updateButton(uraniumMine);
+  // building.updateButton(plutoniumMine);
+  // building.updateButton(diamondMine);
 }
 
 loadGame(false);
@@ -616,7 +627,7 @@ let lastTick = new Date().getTime();
 
 setInterval(() => {
   let d = new Date().getTime();
-  let income = 0;
+  income = 0;
 
   income += Math.floor(quarry.count) * quarry.production;
   income += copperMine.count * copperMine.production;
@@ -745,6 +756,7 @@ let saveToText = () => {
     money: money,
     clicker: clicker,
     globalUpgrade: globalUpgrade,
+    logOut: new Date().getTime(),
     quarry: quarry,
     copperMine: copperMine,
     ironMine: ironMine,

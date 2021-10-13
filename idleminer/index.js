@@ -14,6 +14,9 @@ let billion = million * 1000;
 let trillion = billion * 1000;
 let quadrillion = trillion * 1000;
 let quintillion = quadrillion * 1000;
+let sextillion = quintillion * 1000;
+let septillion = sextillion * 1000;
+let octillion = septillion * 1000;
 
 let prettifyIntBasic = (i) => {
   return Math.floor(i).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -119,6 +122,25 @@ let globalUpgrade = {
   updateButton: () => {
     let btn = document.getElementById('globalUpgrade');
     btn.innerHTML = Math.round(globalUpgrade.mod*100) + "% income, upgrade (+5%): $" + prettifyInt(globalUpgrade.cost);
+  }
+}
+
+let offlineUpgrade = {
+  mod: .25,
+  cost: 500 * trillion,
+
+  upgrade: () => {
+    if (money >= offlineUpgrade.cost && offlineUpgrade.mod < 1) {
+      money -= offlineUpgrade.cost;
+      offlineUpgrade.mod += 0.05;
+      offlineUpgrade.cost *= 10;
+      offlineUpgrade.updateButton();
+    }
+  },
+
+  updateButton: () => {
+    let btn = document.getElementById('offlineUpgrade');
+    btn.innerHTML = Math.round(offlineUpgrade.mod*100) + "% offline income, upgrade (+5%): $" + prettifyInt(offlineUpgrade.cost);
   }
 }
 
@@ -326,6 +348,84 @@ let antimatterMine = {
   factoryCost: 5 * quadrillion,
 }
 
+let twoDimensionalMatterMine = {
+  name: "2 Dimensional Matter Mines",
+  cost: 15 * quadrillion,
+  count: 0,
+  production: 30 * billion,
+  upgradeCost: 200 * quadrillion,
+  percentage: 0,
+  factories: 0,
+  factoryCost: 500 * quadrillion,
+}
+
+let oneDimensionalMatterMine = {
+  name: "1 Dimensional Matter Mines",
+  cost: 350 * quadrillion,
+  count: 0,
+  production: 75 * billion,
+  upgradeCost: quintillion,
+  percentage: 0,
+  factories: 0,
+  factoryCost: 5 * quintillion,
+}
+
+let fourDimensionalMatterMine = {
+  name: "4 Dimensional Matter Mines",
+  cost: 2.5 * quintillion,
+  count: 0,
+  production: 400 * billion,
+  upgradeCost: 40 * quintillion,
+  percentage: 0,
+  factories: 0,
+  factoryCost: 250 * quintillion,
+}
+
+let eightDimensionalMatterMine = {
+  name: "8 Dimensional Matter Mines",
+  cost: 50 * quintillion,
+  count: 0,
+  production: 2 * trillion,
+  upgradeCost: 400 * quintillion,
+  percentage: 0,
+  factories: 0,
+  factoryCost: 2500 * quintillion,
+}
+
+let sixteenDimensionalMatterMine = {
+  name: "16 Dimensional Matter Mines",
+  cost: 5000 * quintillion,
+  count: 0,
+  production: 25 * trillion,
+  upgradeCost: 40000 * quintillion,
+  percentage: 0,
+  factories: 0,
+  factoryCost: 250000 * quintillion,
+}
+
+
+let twoFiftySixDimensionalMatterMine = {
+  name: "256 Dimensional Matter Mines",
+  cost: 5000 * quintillion,
+  count: 0,
+  production: quadrillion,
+  upgradeCost: 0.5 * septillion,
+  percentage: 0,
+  factories: 0,
+  factoryCost: 5 * septillion,
+}
+
+let zeroDimensionalMatterMine = {
+  name: "0 Dimensional Matter Mines",
+  cost: 10 * octillion,
+  count: 0,
+  production: 100 * quadrillion,
+  upgradeCost: 150 * octillion,
+  percentage: 0,
+  factories: 0,
+  factoryCost: 1000 * octillion,
+}
+
 let updatePrestige = () => {
   document.getElementById('prestige').innerHTML = "Prestige, requires $1T, money will be converted to " + Math.round(money/trillion) + "% bonus production"
 }
@@ -358,6 +458,7 @@ let saveGame = () => {
     money: money,
     clicker: clicker,
     globalUpgrade: globalUpgrade,
+    offlineUpgrade: offlineUpgrade,
     prestige: prestige,
     logOut: new Date().getTime(),
     quarry: quarry,
@@ -378,6 +479,13 @@ let saveGame = () => {
     emeraldMine: emeraldMine,
     oganessonMine: oganessonMine,
     antimatterMine: antimatterMine,
+    twoDimensionalMatterMine: twoDimensionalMatterMine,
+    oneDimensionalMatterMine: oneDimensionalMatterMine,
+    fourDimensionalMatterMine: fourDimensionalMatterMine,
+    eightDimensionalMatterMine: eightDimensionalMatterMine,
+    sixteenDimensionalMatterMine: sixteenDimensionalMatterMine,
+    twoFiftySixDimensionalMatterMine: twoFiftySixDimensionalMatterMine,
+    zeroDimensionalMatterMine: zeroDimensionalMatterMine
   }
 
   localStorage.setItem("save", JSON.stringify(save));
@@ -414,6 +522,11 @@ let loadGame = (fromText) => {
    if (typeof save.globalUpgrade !== "undefined") {
      if (save.globalUpgrade.mod !== "undefined") globalUpgrade.mod = save.globalUpgrade.mod;
      if (save.globalUpgrade.cost !== "undefined") globalUpgrade.cost = save.globalUpgrade.cost;
+   }
+
+   if (typeof save.offlineUpgrade !== "undefined") {
+     if (save.offlineUpgrade.mod !== "undefined") offlineUpgrade.mod = save.offlineUpgrade.mod;
+     if (save.offlineUpgrade.cost !== "undefined") offlineUpgrade.cost = save.offlineUpgrade.cost;
    }
 
   if (typeof save.quarry !== "undefined") {
@@ -578,16 +691,83 @@ let loadGame = (fromText) => {
     if (typeof save.antimatterMine.factoryCost !== "undefined") antimatterMine.factoryCost = save.antimatterMine.factoryCost;
   }
 
+  if (typeof save.twoDimensionalMatterMine !== "undefined") {
+    if (typeof save.twoDimensionalMatterMine.cost !== "undefined") twoDimensionalMatterMine.cost = save.twoDimensionalMatterMine.cost;
+    if (typeof save.twoDimensionalMatterMine.count !== "undefined") twoDimensionalMatterMine.count = save.twoDimensionalMatterMine.count;
+    if (typeof save.twoDimensionalMatterMine.production !== "undefined") twoDimensionalMatterMine.production = save.twoDimensionalMatterMine.production;
+    if (typeof save.twoDimensionalMatterMine.upgradeCost !== "undefined") twoDimensionalMatterMine.upgradeCost = save.twoDimensionalMatterMine.upgradeCost;
+    if (typeof save.twoDimensionalMatterMine.factories !== "undefined") twoDimensionalMatterMine.factories = save.twoDimensionalMatterMine.factories;
+    if (typeof save.twoDimensionalMatterMine.factoryCost !== "undefined") twoDimensionalMatterMine.factoryCost = save.twoDimensionalMatterMine.factoryCost;
+  }
+
+  if (typeof save.oneDimensionalMatterMine !== "undefined") {
+    if (typeof save.oneDimensionalMatterMine.cost !== "undefined") oneDimensionalMatterMine.cost = save.oneDimensionalMatterMine.cost;
+    if (typeof save.oneDimensionalMatterMine.count !== "undefined") oneDimensionalMatterMine.count = save.oneDimensionalMatterMine.count;
+    if (typeof save.oneDimensionalMatterMine.production !== "undefined") oneDimensionalMatterMine.production = save.oneDimensionalMatterMine.production;
+    if (typeof save.oneDimensionalMatterMine.upgradeCost !== "undefined") oneDimensionalMatterMine.upgradeCost = save.oneDimensionalMatterMine.upgradeCost;
+    if (typeof save.oneDimensionalMatterMine.factories !== "undefined") oneDimensionalMatterMine.factories = save.oneDimensionalMatterMine.factories;
+    if (typeof save.oneDimensionalMatterMine.factoryCost !== "undefined") oneDimensionalMatterMine.factoryCost = save.oneDimensionalMatterMine.factoryCost;
+  }
+
+  if (typeof save.fourDimensionalMatterMine !== "undefined") {
+    if (typeof save.fourDimensionalMatterMine.cost !== "undefined") fourDimensionalMatterMine.cost = save.fourDimensionalMatterMine.cost;
+    if (typeof save.fourDimensionalMatterMine.count !== "undefined") fourDimensionalMatterMine.count = save.fourDimensionalMatterMine.count;
+    if (typeof save.fourDimensionalMatterMine.production !== "undefined") fourDimensionalMatterMine.production = save.fourDimensionalMatterMine.production;
+    if (typeof save.fourDimensionalMatterMine.upgradeCost !== "undefined") fourDimensionalMatterMine.upgradeCost = save.fourDimensionalMatterMine.upgradeCost;
+    if (typeof save.fourDimensionalMatterMine.factories !== "undefined") fourDimensionalMatterMine.factories = save.fourDimensionalMatterMine.factories;
+    if (typeof save.fourDimensionalMatterMine.factoryCost !== "undefined") fourDimensionalMatterMine.factoryCost = save.fourDimensionalMatterMine.factoryCost;
+  }
+
+  if (typeof save.eightDimensionalMatterMine !== "undefined") {
+    if (typeof save.eightDimensionalMatterMine.cost !== "undefined") eightDimensionalMatterMine.cost = save.eightDimensionalMatterMine.cost;
+    if (typeof save.eightDimensionalMatterMine.count !== "undefined") eightDimensionalMatterMine.count = save.eightDimensionalMatterMine.count;
+    if (typeof save.eightDimensionalMatterMine.production !== "undefined") eightDimensionalMatterMine.production = save.eightDimensionalMatterMine.production;
+    if (typeof save.eightDimensionalMatterMine.upgradeCost !== "undefined") eightDimensionalMatterMine.upgradeCost = save.eightDimensionalMatterMine.upgradeCost;
+    if (typeof save.eightDimensionalMatterMine.factories !== "undefined") eightDimensionalMatterMine.factories = save.eightDimensionalMatterMine.factories;
+    if (typeof save.eightDimensionalMatterMine.factoryCost !== "undefined") eightDimensionalMatterMine.factoryCost = save.eightDimensionalMatterMine.factoryCost;
+  }
+
+  if (typeof save.sixteenDimensionalMatterMine !== "undefined") {
+    if (typeof save.sixteenDimensionalMatterMine.cost !== "undefined") sixteenDimensionalMatterMine.cost = save.sixteenDimensionalMatterMine.cost;
+    if (typeof save.sixteenDimensionalMatterMine.count !== "undefined") sixteenDimensionalMatterMine.count = save.sixteenDimensionalMatterMine.count;
+    if (typeof save.sixteenDimensionalMatterMine.production !== "undefined") sixteenDimensionalMatterMine.production = save.sixteenDimensionalMatterMine.production;
+    if (typeof save.sixteenDimensionalMatterMine.upgradeCost !== "undefined") sixteenDimensionalMatterMine.upgradeCost = save.sixteenDimensionalMatterMine.upgradeCost;
+    if (typeof save.sixteenDimensionalMatterMine.factories !== "undefined") sixteenDimensionalMatterMine.factories = save.sixteenDimensionalMatterMine.factories;
+    if (typeof save.sixteenDimensionalMatterMine.factoryCost !== "undefined") sixteenDimensionalMatterMine.factoryCost = save.sixteenDimensionalMatterMine.factoryCost;
+  }
+
+  if (typeof save.twoFiftySixDimensionalMatterMine !== "undefined") {
+    if (typeof save.twoFiftySixDimensionalMatterMine.cost !== "undefined") twoFiftySixDimensionalMatterMine.cost = save.twoFiftySixDimensionalMatterMine.cost;
+    if (typeof save.twoFiftySixDimensionalMatterMine.count !== "undefined") twoFiftySixDimensionalMatterMine.count = save.twoFiftySixDimensionalMatterMine.count;
+    if (typeof save.twoFiftySixDimensionalMatterMine.production !== "undefined") twoFiftySixDimensionalMatterMine.production = save.twoFiftySixDimensionalMatterMine.production;
+    if (typeof save.twoFiftySixDimensionalMatterMine.upgradeCost !== "undefined") twoFiftySixDimensionalMatterMine.upgradeCost = save.twoFiftySixDimensionalMatterMine.upgradeCost;
+    if (typeof save.twoFiftySixDimensionalMatterMine.factories !== "undefined") twoFiftySixDimensionalMatterMine.factories = save.twoFiftySixDimensionalMatterMine.factories;
+    if (typeof save.twoFiftySixDimensionalMatterMine.factoryCost !== "undefined") twoFiftySixDimensionalMatterMine.factoryCost = save.twoFiftySixDimensionalMatterMine.factoryCost;
+  }
+
+  if (typeof save.zeroDimensionalMatterMine !== "undefined") {
+    if (typeof save.zeroDimensionalMatterMine.cost !== "undefined") zeroDimensionalMatterMine.cost = save.zeroDimensionalMatterMine.cost;
+    if (typeof save.zeroDimensionalMatterMine.count !== "undefined") zeroDimensionalMatterMine.count = save.zeroDimensionalMatterMine.count;
+    if (typeof save.zeroDimensionalMatterMine.production !== "undefined") zeroDimensionalMatterMine.production = save.zeroDimensionalMatterMine.production;
+    if (typeof save.zeroDimensionalMatterMine.upgradeCost !== "undefined") zeroDimensionalMatterMine.upgradeCost = save.zeroDimensionalMatterMine.upgradeCost;
+    if (typeof save.zeroDimensionalMatterMine.factories !== "undefined") zeroDimensionalMatterMine.factories = save.zeroDimensionalMatterMine.factories;
+    if (typeof save.zeroDimensionalMatterMine.factoryCost !== "undefined") zeroDimensionalMatterMine.factoryCost = save.zeroDimensionalMatterMine.factoryCost;
+  }
+
   if (typeof save.prestige !== "undefined") {
     prestige = save.prestige;
   }
 
   if (typeof save.logOut !== "undefined") {
     let s = setInterval(() => {
-      money += Math.round((new Date().getTime() - save.logOut) * (income/2000));
-      console.log("Gained $" + Math.round((new Date().getTime() - save.logOut) * (income/2000)) + " from offline production")
+      let g = Math.round((new Date().getTime() - save.logOut) * (income/1000));
+      g *= offlineUpgrade.mod;
+      g *= globalUpgrade.mod;
+      money += g;
+      alert("You gained $" + prettifyInt(g) + " from offline production");
+      console.log("Gained $" + g + " from offline production")
       clearInterval(s);
-    }, 1000);
+    }, 50);
   }
 
   console.log("Loaded game");
@@ -603,22 +783,7 @@ let loadGame = (fromText) => {
 
   clicker.updateButton();
   globalUpgrade.updateButton();
-
-  // building.updateButton(quarry);
-  // building.updateButton(copperMine);
-  // building.updateButton(ironMine);
-  // building.updateButton(silverMine);
-  // building.updateButton(tungstenMine);
-  // building.updateButton(leadMine);
-  // building.updateButton(quartzMine);
-  // building.updateButton(rubyMine);
-  // building.updateButton(sapphireMine);
-  // building.updateButton(goldMine);
-  // building.updateButton(platinumMine);
-  // building.updateButton(titaniumMine);
-  // building.updateButton(uraniumMine);
-  // building.updateButton(plutoniumMine);
-  // building.updateButton(diamondMine);
+  offlineUpgrade.updateButton();
 }
 
 loadGame(false);
@@ -647,6 +812,13 @@ setInterval(() => {
   income += emeraldMine.count * emeraldMine.production;
   income += oganessonMine.count * oganessonMine.production;
   income += antimatterMine.count * antimatterMine.production;
+  income += twoDimensionalMatterMine.count * twoDimensionalMatterMine.production;
+  income += oneDimensionalMatterMine.count * oneDimensionalMatterMine.production;
+  income += fourDimensionalMatterMine.count * fourDimensionalMatterMine.production;
+  income += eightDimensionalMatterMine.count * eightDimensionalMatterMine.production;
+  income += sixteenDimensionalMatterMine.count * sixteenDimensionalMatterMine.production;
+  income += twoFiftySixDimensionalMatterMine.count * twoFiftySixDimensionalMatterMine.production;
+  income += zeroDimensionalMatterMine.count * zeroDimensionalMatterMine.production;
 
   income = Math.round(income * 100)/100;
 
@@ -706,6 +878,27 @@ setInterval(() => {
   antimatterMine.percentage = Math.round(((antimatterMine.production * antimatterMine.count) / income) * 100 * m)
   building.updateButton(antimatterMine);
 
+  twoDimensionalMatterMine.percentage = Math.round(((twoDimensionalMatterMine.production * twoDimensionalMatterMine.count) / income) * 100 * m)
+  building.updateButton(twoDimensionalMatterMine);
+
+  oneDimensionalMatterMine.percentage = Math.round(((oneDimensionalMatterMine.production * oneDimensionalMatterMine.count) / income) * 100 * m)
+  building.updateButton(oneDimensionalMatterMine);
+
+  fourDimensionalMatterMine.percentage = Math.round(((fourDimensionalMatterMine.production * fourDimensionalMatterMine.count) / income) * 100 * m)
+  building.updateButton(fourDimensionalMatterMine);
+
+  eightDimensionalMatterMine.percentage = Math.round(((eightDimensionalMatterMine.production * eightDimensionalMatterMine.count) / income) * 100 * m)
+  building.updateButton(eightDimensionalMatterMine);
+
+  sixteenDimensionalMatterMine.percentage = Math.round(((sixteenDimensionalMatterMine.production * sixteenDimensionalMatterMine.count) / income) * 100 * m)
+  building.updateButton(sixteenDimensionalMatterMine);
+
+  twoFiftySixDimensionalMatterMine.percentage = Math.round(((twoFiftySixDimensionalMatterMine.production * twoFiftySixDimensionalMatterMine.count) / income) * 100 * m)
+  building.updateButton(twoFiftySixDimensionalMatterMine);
+
+  zeroDimensionalMatterMine.percentage = Math.round(((zeroDimensionalMatterMine.production * zeroDimensionalMatterMine.count) / income) * 100 * m)
+  building.updateButton(zeroDimensionalMatterMine);
+
   income *= globalUpgrade.mod;
 
   let p = d - lastTick;
@@ -743,6 +936,13 @@ setInterval(() => {
   emeraldMine.count += emeraldMine.factories/400;
   oganessonMine.count += oganessonMine.factories/400;
   antimatterMine.count += antimatterMine.factories/400;
+  twoDimensionalMatterMine.count += twoDimensionalMatterMine.factories/400;
+  oneDimensionalMatterMine.count += oneDimensionalMatterMine.factories/400;
+  fourDimensionalMatterMine.count += fourDimensionalMatterMine.factories/400;
+  eightDimensionalMatterMine.count += eightDimensionalMatterMine.factories/400;
+  sixteenDimensionalMatterMine.count += sixteenDimensionalMatterMine.factories/400;
+  twoFiftySixDimensionalMatterMine.count += twoFiftySixDimensionalMatterMine.factories/400;
+  zeroDimensionalMatterMine.count += zeroDimensionalMatterMine.factories/400;
 
   money += income;
 
@@ -756,6 +956,7 @@ let saveToText = () => {
     money: money,
     clicker: clicker,
     globalUpgrade: globalUpgrade,
+    offlineUpgrade: offlineUpgrade,
     logOut: new Date().getTime(),
     quarry: quarry,
     copperMine: copperMine,
@@ -772,6 +973,13 @@ let saveToText = () => {
     uraniumMine: uraniumMine,
     plutoniumMine: plutoniumMine,
     diamondMine: diamondMine,
+    twoDimensionalMatterMine: twoDimensionalMatterMine,
+    oneDimensionalMatterMine: oneDimensionalMatterMine,
+    fourDimensionalMatterMine: fourDimensionalMatterMine,
+    eightDimensionalMatterMine: eightDimensionalMatterMine,
+    sixteenDimensionalMatterMine: sixteenDimensionalMatterMine,
+    twoFiftySixDimensionalMatterMine: twoFiftySixDimensionalMatterMine,
+    zeroDimensionalMatterMine: zeroDimensionalMatterMine
   }
 
   let text = document.querySelector('#textSave')

@@ -760,12 +760,15 @@ let loadGame = (fromText) => {
 
   if (typeof save.logOut !== "undefined") {
     let s = setInterval(() => {
-      let g = Math.round((new Date().getTime() - save.logOut) * (income/1000));
+      console.log("Time since log out: " +((new Date().getTime() - save.logOut)/1000) + "s");
+      console.log("Income: " + (income));
+      let g = Math.round(((new Date().getTime() - save.logOut)/1000) * income * 100)/100;
+      console.log(g);
       g *= offlineUpgrade.mod;
       g *= globalUpgrade.mod;
+      console.log("Gained $" + g + " from offline production")
       money += g;
       alert("You gained $" + prettifyInt(g) + " from offline production");
-      console.log("Gained $" + g + " from offline production")
       clearInterval(s);
     }, 50);
   }
@@ -822,84 +825,86 @@ setInterval(() => {
 
   income = Math.round(income * 100)/100;
 
+  let i = income;
+
   let m = 1; //100/71;
 
-  quarry.percentage = Math.round(((quarry.production * Math.floor(quarry.count)) / income) * 100 * m)
+  quarry.percentage = Math.round(((quarry.production * Math.floor(quarry.count)) / i) * 100 * m)
   building.updateButton(quarry);
 
-  copperMine.percentage = Math.round(((copperMine.production * copperMine.count) / income) * 100 * m)
+  copperMine.percentage = Math.round(((copperMine.production * copperMine.count) / i) * 100 * m)
   building.updateButton(copperMine);
 
-  ironMine.percentage = Math.round(((ironMine.production * ironMine.count) / income) * 100 * m)
+  ironMine.percentage = Math.round(((ironMine.production * ironMine.count) / i) * 100 * m)
   building.updateButton(ironMine);
 
-  silverMine.percentage = Math.round(((silverMine.production * silverMine.count) / income) * 100 * m)
+  silverMine.percentage = Math.round(((silverMine.production * silverMine.count) / i) * 100 * m)
   building.updateButton(silverMine);
 
-  tungstenMine.percentage = Math.round(((tungstenMine.production * tungstenMine.count) / income) * 100 * m)
+  tungstenMine.percentage = Math.round(((tungstenMine.production * tungstenMine.count) / i) * 100 * m)
   building.updateButton(tungstenMine);
 
-  leadMine.percentage = Math.round(((leadMine.production * leadMine.count) / income) * 100 * m)
+  leadMine.percentage = Math.round(((leadMine.production * leadMine.count) / i) * 100 * m)
   building.updateButton(leadMine);
 
-  quartzMine.percentage = Math.round(((quartzMine.production * quartzMine.count) / income) * 100 * m)
+  quartzMine.percentage = Math.round(((quartzMine.production * quartzMine.count) / i) * 100 * m)
   building.updateButton(quartzMine);
 
-  rubyMine.percentage = Math.round(((rubyMine.production * rubyMine.count) / income) * 100 * m)
+  rubyMine.percentage = Math.round(((rubyMine.production * rubyMine.count) / i) * 100 * m)
   building.updateButton(rubyMine);
 
-  sapphireMine.percentage = Math.round(((sapphireMine.production * sapphireMine.count) / income) * 100 * m)
+  sapphireMine.percentage = Math.round(((sapphireMine.production * sapphireMine.count) / i) * 100 * m)
   building.updateButton(sapphireMine);
 
-  goldMine.percentage = Math.round(((goldMine.production * goldMine.count) / income) * 100 * m)
+  goldMine.percentage = Math.round(((goldMine.production * goldMine.count) / i) * 100 * m)
   building.updateButton(goldMine);
 
-  platinumMine.percentage = Math.round(((platinumMine.production * platinumMine.count) / income) * 100 * m)
+  platinumMine.percentage = Math.round(((platinumMine.production * platinumMine.count) / i) * 100 * m)
   building.updateButton(platinumMine);
 
-  titaniumMine.percentage = Math.round(((titaniumMine.production * titaniumMine.count) / income) * 100 * m)
+  titaniumMine.percentage = Math.round(((titaniumMine.production * titaniumMine.count) / i) * 100 * m)
   building.updateButton(titaniumMine);
 
-  uraniumMine.percentage = Math.round(((uraniumMine.production * uraniumMine.count) / income) * 100 * m)
+  uraniumMine.percentage = Math.round(((uraniumMine.production * uraniumMine.count) / i) * 100 * m)
   building.updateButton(uraniumMine);
 
-  plutoniumMine.percentage = Math.round(((plutoniumMine.production * plutoniumMine.count) / income) * 100 * m)
+  plutoniumMine.percentage = Math.round(((plutoniumMine.production * plutoniumMine.count) / i) * 100 * m)
   building.updateButton(plutoniumMine);
 
-  diamondMine.percentage = Math.round(((diamondMine.production * diamondMine.count) / income) * 100 * m)
+  diamondMine.percentage = Math.round(((diamondMine.production * diamondMine.count) / i) * 100 * m)
   building.updateButton(diamondMine);
 
-  emeraldMine.percentage = Math.round(((emeraldMine.production * emeraldMine.count) / income) * 100 * m)
+  emeraldMine.percentage = Math.round(((emeraldMine.production * emeraldMine.count) / i) * 100 * m)
   building.updateButton(emeraldMine);
 
-  oganessonMine.percentage = Math.round(((oganessonMine.production * oganessonMine.count) / income) * 100 * m)
+  oganessonMine.percentage = Math.round(((oganessonMine.production * oganessonMine.count) / i) * 100 * m)
   building.updateButton(oganessonMine);
 
-  antimatterMine.percentage = Math.round(((antimatterMine.production * antimatterMine.count) / income) * 100 * m)
+  antimatterMine.percentage = Math.round(((antimatterMine.production * antimatterMine.count) / i) * 100 * m)
   building.updateButton(antimatterMine);
 
-  twoDimensionalMatterMine.percentage = Math.round(((twoDimensionalMatterMine.production * twoDimensionalMatterMine.count) / income) * 100 * m)
+  twoDimensionalMatterMine.percentage = Math.round(((twoDimensionalMatterMine.production * twoDimensionalMatterMine.count) / i) * 100 * m)
   building.updateButton(twoDimensionalMatterMine);
 
-  oneDimensionalMatterMine.percentage = Math.round(((oneDimensionalMatterMine.production * oneDimensionalMatterMine.count) / income) * 100 * m)
+  oneDimensionalMatterMine.percentage = Math.round(((oneDimensionalMatterMine.production * oneDimensionalMatterMine.count) / i) * 100 * m)
   building.updateButton(oneDimensionalMatterMine);
 
-  fourDimensionalMatterMine.percentage = Math.round(((fourDimensionalMatterMine.production * fourDimensionalMatterMine.count) / income) * 100 * m)
+  fourDimensionalMatterMine.percentage = Math.round(((fourDimensionalMatterMine.production * fourDimensionalMatterMine.count) / i) * 100 * m)
   building.updateButton(fourDimensionalMatterMine);
 
-  eightDimensionalMatterMine.percentage = Math.round(((eightDimensionalMatterMine.production * eightDimensionalMatterMine.count) / income) * 100 * m)
+  eightDimensionalMatterMine.percentage = Math.round(((eightDimensionalMatterMine.production * eightDimensionalMatterMine.count) / i) * 100 * m)
   building.updateButton(eightDimensionalMatterMine);
 
-  sixteenDimensionalMatterMine.percentage = Math.round(((sixteenDimensionalMatterMine.production * sixteenDimensionalMatterMine.count) / income) * 100 * m)
+  sixteenDimensionalMatterMine.percentage = Math.round(((sixteenDimensionalMatterMine.production * sixteenDimensionalMatterMine.count) / i) * 100 * m)
   building.updateButton(sixteenDimensionalMatterMine);
 
-  twoFiftySixDimensionalMatterMine.percentage = Math.round(((twoFiftySixDimensionalMatterMine.production * twoFiftySixDimensionalMatterMine.count) / income) * 100 * m)
+  twoFiftySixDimensionalMatterMine.percentage = Math.round(((twoFiftySixDimensionalMatterMine.production * twoFiftySixDimensionalMatterMine.count) / i) * 100 * m)
   building.updateButton(twoFiftySixDimensionalMatterMine);
 
-  zeroDimensionalMatterMine.percentage = Math.round(((zeroDimensionalMatterMine.production * zeroDimensionalMatterMine.count) / income) * 100 * m)
+  zeroDimensionalMatterMine.percentage = Math.round(((zeroDimensionalMatterMine.production * zeroDimensionalMatterMine.count) / i) * 100 * m)
   building.updateButton(zeroDimensionalMatterMine);
 
-  income *= globalUpgrade.mod;
+  i *= globalUpgrade.mod;
 
   let p = d - lastTick;
 
@@ -908,15 +913,15 @@ setInterval(() => {
     console.log("Ticks/sec: " + Math.round(1000/p));
   }
 
-  incomeDisplay.innerHTML = "$" + prettifyInt(Math.round(income*10)/10) + "/s";
-  document.getElementById('baseIncome').innerHTML = "$" + prettifyInt(Math.round((income/globalUpgrade.mod)*100)/100) + "/s";
+  incomeDisplay.innerHTML = "$" + prettifyInt(Math.round(i*10)/10) + "/s";
+  document.getElementById('baseIncome').innerHTML = "$" + prettifyInt(Math.round((i/globalUpgrade.mod)*100)/100) + "/s";
 
-  income /= 1000;
-  income *= p;
+  i /= 1000;
+  i *= p;
 
   lastTick = d;
 
-  document.getElementById('actIncome').innerHTML = "$" + prettifyInt(Math.round(income*4000)/100) + "/s";
+  document.getElementById('actIncome').innerHTML = "$" + prettifyInt(Math.round(i*4000)/100) + "/s";
 
   quarry.count += quarry.factories/400;
   copperMine.count += copperMine.factories/400;
@@ -944,7 +949,7 @@ setInterval(() => {
   twoFiftySixDimensionalMatterMine.count += twoFiftySixDimensionalMatterMine.factories/400;
   zeroDimensionalMatterMine.count += zeroDimensionalMatterMine.factories/400;
 
-  money += income;
+  money += i;
 
   moneyDisplay.innerHTML = '$' + prettifyInt(Math.round(money*100)/100);
   document.getElementById('title').innerHTML = "Idle Miner - $" + prettifyInt(Math.round(money*100)/100);

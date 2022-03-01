@@ -1,0 +1,30 @@
+body {
+  color: white;
+  background-color: black;
+  font-family: monospace;
+  margin: 0;
+}
+
+p {
+  overflow-wrap: break-word;
+}
+
+.logDiv {
+  float: left;
+  height: 92.5vh;
+  width: 80%;
+}
+
+.statsDiv {
+  border-left: 1px solid black;
+  border-color: white;
+  padding: 10px;
+  float: left;
+  height: 92.5vh;
+  width: 18%;
+}
+
+.input {
+  width: 100%;
+  font-family: monospace;
+}

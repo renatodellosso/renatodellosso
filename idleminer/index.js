@@ -978,6 +978,8 @@ let saveToText = () => {
     uraniumMine: uraniumMine,
     plutoniumMine: plutoniumMine,
     diamondMine: diamondMine,
+    emeraldMine: emeraldMine,
+    oganessonMine: oganessonMine,
     twoDimensionalMatterMine: twoDimensionalMatterMine,
     oneDimensionalMatterMine: oneDimensionalMatterMine,
     fourDimensionalMatterMine: fourDimensionalMatterMine,

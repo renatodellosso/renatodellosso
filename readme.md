@@ -1,2 +1,2 @@
 [![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=renatodellosso&theme=synthwave&count_private=true)](https://github.com/anuraghazra/github-readme-stats)
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=renatodellosso&theme=synthwave)](https://github.com/anuraghazra/github-readme-stats)
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=renatodellosso&theme=synthwave&langs_count=10&exclude_repo=pong))](https://github.com/anuraghazra/github-readme-stats)

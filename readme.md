@@ -3,6 +3,7 @@
 [![Renato's wakatime stats](https://github-readme-stats.vercel.app/api/wakatime?username=Rgamer43&theme=synthwave)](https://github.com/anuraghazra/github-readme-stats) -->
 [![Renato's StackOverflow](https://stackoverflow-badge.onrender.com/api/StackOverflowBadge/22099600)](https://stackoverflow.com/users/22099600/Rgamer43)
 [![wakatime](https://wakatime.com/badge/user/b0f476bc-3154-4677-91c4-ac720571e2b4.svg)](https://wakatime.com/@b0f476bc-3154-4677-91c4-ac720571e2b4)
+**Recent Coding Activity**
 <!--START_SECTION:waka-->
 
 ```txt

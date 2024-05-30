@@ -7,7 +7,9 @@
 <!--START_SECTION:waka-->
 
 ```txt
-TypeScript   5 hrs 37 mins   █████████████████████████   100.00 %
+TypeScript       5 hrs 25 mins   ██████████████████████▒░░   89.70 %
+Java             36 mins         ██▓░░░░░░░░░░░░░░░░░░░░░░   10.14 %
+GitIgnore file   0 secs          ░░░░░░░░░░░░░░░░░░░░░░░░░   00.16 %
 ```
 
 <!--END_SECTION:waka-->

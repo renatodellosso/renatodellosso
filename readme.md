@@ -7,8 +7,8 @@
 <!--START_SECTION:waka-->
 
 ```txt
-TypeScript   5 hrs 18 mins   ████████████████████▒░░░░   80.73 %
-Ruby         1 hr 16 mins    ████▓░░░░░░░░░░░░░░░░░░░░   19.26 %
+TypeScript   5 hrs 11 mins   ███████████████████▒░░░░░   77.55 %
+Ruby         1 hr 30 mins    █████▓░░░░░░░░░░░░░░░░░░░   22.44 %
 JavaScript   0 secs          ░░░░░░░░░░░░░░░░░░░░░░░░░   00.01 %
 ```
 

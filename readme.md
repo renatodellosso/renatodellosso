@@ -7,10 +7,10 @@
 <!--START_SECTION:waka-->
 
 ```txt
-TypeScript   1 hr 35 mins    █████████████████▓░░░░░░░   71.16 %
-Bash         28 mins         █████▒░░░░░░░░░░░░░░░░░░░   21.10 %
-JavaScript   10 mins         ██░░░░░░░░░░░░░░░░░░░░░░░   07.63 %
-TSConfig     0 secs          ░░░░░░░░░░░░░░░░░░░░░░░░░   00.11 %
+TypeScript   1 hr 38 mins    ██████████████████████▒░░   88.87 %
+JavaScript   10 mins         ██▒░░░░░░░░░░░░░░░░░░░░░░   09.25 %
+Other        1 min           ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.75 %
+TSConfig     0 secs          ░░░░░░░░░░░░░░░░░░░░░░░░░   00.13 %
 ```
 
 <!--END_SECTION:waka-->

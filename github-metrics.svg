@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="480" height="4030" class="">
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="3894" class="">
     <defs>
         <style/>
     </defs>
@@ -31,18 +31,18 @@
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 210 11" width="210" height="16">
                                 <g>
                                     <rect class="day" x="0" y="0" width="11" height="11" fill="#ebedf0" rx="2" ry="2"/>
-                                    <rect class="day" x="15" y="0" width="11" height="11" fill="#ebedf0" rx="2" ry="2"/>
-                                    <rect class="day" x="30" y="0" width="11" height="11" fill="#40c463" rx="2" ry="2"/>
-                                    <rect class="day" x="45" y="0" width="11" height="11" fill="#9be9a8" rx="2" ry="2"/>
-                                    <rect class="day" x="60" y="0" width="11" height="11" fill="#216e39" rx="2" ry="2"/>
+                                    <rect class="day" x="15" y="0" width="11" height="11" fill="#40c463" rx="2" ry="2"/>
+                                    <rect class="day" x="30" y="0" width="11" height="11" fill="#9be9a8" rx="2" ry="2"/>
+                                    <rect class="day" x="45" y="0" width="11" height="11" fill="#216e39" rx="2" ry="2"/>
+                                    <rect class="day" x="60" y="0" width="11" height="11" fill="#9be9a8" rx="2" ry="2"/>
                                     <rect class="day" x="75" y="0" width="11" height="11" fill="#9be9a8" rx="2" ry="2"/>
-                                    <rect class="day" x="90" y="0" width="11" height="11" fill="#9be9a8" rx="2" ry="2"/>
+                                    <rect class="day" x="90" y="0" width="11" height="11" fill="#ebedf0" rx="2" ry="2"/>
                                     <rect class="day" x="105" y="0" width="11" height="11" fill="#ebedf0" rx="2" ry="2"/>
                                     <rect class="day" x="120" y="0" width="11" height="11" fill="#ebedf0" rx="2" ry="2"/>
-                                    <rect class="day" x="135" y="0" width="11" height="11" fill="#ebedf0" rx="2" ry="2"/>
+                                    <rect class="day" x="135" y="0" width="11" height="11" fill="#9be9a8" rx="2" ry="2"/>
                                     <rect class="day" x="150" y="0" width="11" height="11" fill="#9be9a8" rx="2" ry="2"/>
                                     <rect class="day" x="165" y="0" width="11" height="11" fill="#9be9a8" rx="2" ry="2"/>
-                                    <rect class="day" x="180" y="0" width="11" height="11" fill="#9be9a8" rx="2" ry="2"/>
+                                    <rect class="day" x="180" y="0" width="11" height="11" fill="#ebedf0" rx="2" ry="2"/>
                                     <rect class="day" x="195" y="0" width="11" height="11" fill="#ebedf0" rx="2" ry="2"/>
                                 </g>
                             </svg>
@@ -177,7 +177,7 @@
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
                                         <path fill-rule="evenodd" d="M2.75 1.5a.25.25 0 00-.25.25v12.5c0 .138.112.25.25.25h10.5a.25.25 0 00.25-.25V4.664a.25.25 0 00-.073-.177l-2.914-2.914a.25.25 0 00-.177-.073H2.75zM1 1.75C1 .784 1.784 0 2.75 0h7.586c.464 0 .909.184 1.237.513l2.914 2.914c.329.328.513.773.513 1.237v9.586A1.75 1.75 0 0113.25 16H2.75A1.75 1.75 0 011 14.25V1.75zm7 1.5a.75.75 0 01.75.75v1.5h1.5a.75.75 0 010 1.5h-1.5v1.5a.75.75 0 01-1.5 0V7h-1.5a.75.75 0 010-1.5h1.5V4A.75.75 0 018 3.25zm-3 8a.75.75 0 01.75-.75h4.5a.75.75 0 010 1.5h-4.5a.75.75 0 01-.75-.75z"/>
                                     </svg>
-                                    3.73k added, 426 removed
+                                    613k added, 253k removed
                                 </div>
                             </section>
                             <section>
@@ -403,7 +403,7 @@
                         <path fill-rule="evenodd" d="M8 1.5c-2.363 0-4 1.69-4 3.75 0 .984.424 1.625.984 2.304l.214.253c.223.264.47.556.673.848.284.411.537.896.621 1.49a.75.75 0 01-1.484.211c-.04-.282-.163-.547-.37-.847a8.695 8.695 0 00-.542-.68c-.084-.1-.173-.205-.268-.32C3.201 7.75 2.5 6.766 2.5 5.25 2.5 2.31 4.863 0 8 0s5.5 2.31 5.5 5.25c0 1.516-.701 2.5-1.328 3.259-.095.115-.184.22-.268.319-.207.245-.383.453-.541.681-.208.3-.33.565-.37.847a.75.75 0 01-1.485-.212c.084-.593.337-1.078.621-1.489.203-.292.45-.584.673-.848.075-.088.147-.173.213-.253.561-.679.985-1.32.985-2.304 0-2.06-1.637-3.75-4-3.75zM6 15.25a.75.75 0 01.75-.75h2.5a.75.75 0 010 1.5h-2.5a.75.75 0 01-.75-.75zM5.75 12a.75.75 0 000 1.5h4.5a.75.75 0 000-1.5h-4.5z"/>
                     </svg>
                     Recent coding habits
-                    <small class="h-details">(computed from last 69 commits)</small>
+                    <small class="h-details">(computed from last 71 commits)</small>
                 </h2>
                 <div class="row">
                     <ul class="facts">
@@ -532,8 +532,8 @@
                                     <text fill="rgba(127, 127, 127, .8)" x="0" dy="-4">0</text>
                                 </g>
                             </g>
-                            <path transform="translate(10,10)" d="M10,105L29.565,105L49.13,105L68.696,105L88.261,105L107.826,105L127.391,105L146.957,105L166.522,105L186.087,89.167L205.652,25.833L225.217,89.167L244.783,89.167L264.348,41.667L283.913,10L303.478,65.417L323.043,57.5L342.609,33.75L362.174,89.167L381.739,105L401.304,81.25L420.87,57.5L440.435,89.167L460,105" fill="transparent" stroke="#87ceeb" stroke-width="2"/>
-                            <path transform="translate(10,10)" d="M10,105L29.565,105L49.13,105L68.696,105L88.261,105L107.826,105L127.391,105L146.957,105L166.522,105L186.087,105L205.652,105L225.217,105L244.783,105L264.348,105L283.913,105L303.478,105L323.043,105L342.609,105L362.174,105L381.739,105L401.304,105L420.87,105L440.435,105L460,105L460,105L440.435,89.167L420.87,57.5L401.304,81.25L381.739,105L362.174,89.167L342.609,33.75L323.043,57.5L303.478,65.417L283.913,10L264.348,41.667L244.783,89.167L225.217,89.167L205.652,25.833L186.087,89.167L166.522,105L146.957,105L127.391,105L107.826,105L88.261,105L68.696,105L49.13,105L29.565,105L10,105Z" fill="rgba(88, 166, 255, .1)"/>
+                            <path transform="translate(10,10)" d="M10,105L29.565,105L49.13,105L68.696,105L88.261,105L107.826,105L127.391,105L146.957,105L166.522,105L186.087,89.167L205.652,25.833L225.217,89.167L244.783,89.167L264.348,41.667L283.913,10L303.478,65.417L323.043,57.5L342.609,25.833L362.174,89.167L381.739,105L401.304,81.25L420.87,57.5L440.435,81.25L460,105" fill="transparent" stroke="#87ceeb" stroke-width="2"/>
+                            <path transform="translate(10,10)" d="M10,105L29.565,105L49.13,105L68.696,105L88.261,105L107.826,105L127.391,105L146.957,105L166.522,105L186.087,105L205.652,105L225.217,105L244.783,105L264.348,105L283.913,105L303.478,105L323.043,105L342.609,105L362.174,105L381.739,105L401.304,105L420.87,105L440.435,105L460,105L460,105L440.435,81.25L420.87,57.5L401.304,81.25L381.739,105L362.174,89.167L342.609,25.833L323.043,57.5L303.478,65.417L283.913,10L264.348,41.667L244.783,89.167L225.217,89.167L205.652,25.833L186.087,89.167L166.522,105L146.957,105L127.391,105L107.826,105L88.261,105L68.696,105L49.13,105L29.565,105L10,105Z" fill="rgba(88, 166, 255, .1)"/>
                             <g>
                                 <circle transform="translate(10,10)" cx="10" cy="105" r="2" fill="#106cbc"/>
                                 <circle transform="translate(10,10)" cx="29.565217391304348" cy="105" r="2" fill="#106cbc"/>
@@ -552,12 +552,12 @@
                                 <circle transform="translate(10,10)" cx="283.9130434782609" cy="10" r="2" fill="#106cbc"/>
                                 <circle transform="translate(10,10)" cx="303.4782608695652" cy="65.41666666666666" r="2" fill="#106cbc"/>
                                 <circle transform="translate(10,10)" cx="323.04347826086956" cy="57.5" r="2" fill="#106cbc"/>
-                                <circle transform="translate(10,10)" cx="342.60869565217394" cy="33.75" r="2" fill="#106cbc"/>
+                                <circle transform="translate(10,10)" cx="342.60869565217394" cy="25.83333333333333" r="2" fill="#106cbc"/>
                                 <circle transform="translate(10,10)" cx="362.17391304347825" cy="89.16666666666667" r="2" fill="#106cbc"/>
                                 <circle transform="translate(10,10)" cx="381.7391304347826" cy="105" r="2" fill="#106cbc"/>
                                 <circle transform="translate(10,10)" cx="401.30434782608694" cy="81.25" r="2" fill="#106cbc"/>
                                 <circle transform="translate(10,10)" cx="420.8695652173913" cy="57.5" r="2" fill="#106cbc"/>
-                                <circle transform="translate(10,10)" cx="440.4347826086956" cy="89.16666666666667" r="2" fill="#106cbc"/>
+                                <circle transform="translate(10,10)" cx="440.4347826086956" cy="81.25" r="2" fill="#106cbc"/>
                                 <circle transform="translate(10,10)" cx="460" cy="105" r="2" fill="#106cbc"/>
                             </g>
                             <g fill="currentColor" text-anchor="middle" font-family="sans-serif" font-size="10" stroke="rgba(88, 166, 255, .05)" stroke-linejoin="round" stroke-width="4" paint-order="stroke fill">
@@ -578,12 +578,12 @@
                                 <text transform="translate(10,6)" x="283.9130434782609" y="10" fill="rgba(127, 127, 127, .8)">12</text>
                                 <text transform="translate(10,6)" x="303.4782608695652" y="65.41666666666666" fill="rgba(127, 127, 127, .8)">5</text>
                                 <text transform="translate(10,6)" x="323.04347826086956" y="57.5" fill="rgba(127, 127, 127, .8)">6</text>
-                                <text transform="translate(10,6)" x="342.60869565217394" y="33.75" fill="rgba(127, 127, 127, .8)">9</text>
+                                <text transform="translate(10,6)" x="342.60869565217394" y="25.83333333333333" fill="rgba(127, 127, 127, .8)">10</text>
                                 <text transform="translate(10,6)" x="362.17391304347825" y="89.16666666666667" fill="rgba(127, 127, 127, .8)">2</text>
                                 <text transform="translate(10,6)" x="381.7391304347826" y="105" fill="rgba(127, 127, 127, .8)"/>
                                 <text transform="translate(10,6)" x="401.30434782608694" y="81.25" fill="rgba(127, 127, 127, .8)">3</text>
                                 <text transform="translate(10,6)" x="420.8695652173913" y="57.5" fill="rgba(127, 127, 127, .8)">6</text>
-                                <text transform="translate(10,6)" x="440.4347826086956" y="89.16666666666667" fill="rgba(127, 127, 127, .8)">2</text>
+                                <text transform="translate(10,6)" x="440.4347826086956" y="81.25" fill="rgba(127, 127, 127, .8)">3</text>
                                 <text transform="translate(10,6)" x="460" y="105" fill="rgba(127, 127, 127, .8)"/>
                             </g>
                         </svg>
@@ -643,14 +643,14 @@
                                         <text fill="rgba(127, 127, 127, .8)" x="0" dy="-4">0</text>
                                     </g>
                                 </g>
-                                <path transform="translate(10,10)" d="M10,105L41,61.571L72,75.143L103,10L134,86L165,105L196,105" fill="transparent" stroke="#87ceeb" stroke-width="2"/>
-                                <path transform="translate(10,10)" d="M10,105L41,105L72,105L103,105L134,105L165,105L196,105L196,105L165,105L134,86L103,10L72,75.143L41,61.571L10,105Z" fill="rgba(88, 166, 255, .1)"/>
+                                <path transform="translate(10,10)" d="M10,105L41,61.571L72,75.143L103,10L134,80.571L165,105L196,105" fill="transparent" stroke="#87ceeb" stroke-width="2"/>
+                                <path transform="translate(10,10)" d="M10,105L41,105L72,105L103,105L134,105L165,105L196,105L196,105L165,105L134,80.571L103,10L72,75.143L41,61.571L10,105Z" fill="rgba(88, 166, 255, .1)"/>
                                 <g>
                                     <circle transform="translate(10,10)" cx="10" cy="105" r="2" fill="#106cbc"/>
                                     <circle transform="translate(10,10)" cx="41" cy="61.57142857142858" r="2" fill="#106cbc"/>
                                     <circle transform="translate(10,10)" cx="72" cy="75.14285714285714" r="2" fill="#106cbc"/>
                                     <circle transform="translate(10,10)" cx="103" cy="10" r="2" fill="#106cbc"/>
-                                    <circle transform="translate(10,10)" cx="134" cy="86" r="2" fill="#106cbc"/>
+                                    <circle transform="translate(10,10)" cx="134" cy="80.57142857142857" r="2" fill="#106cbc"/>
                                     <circle transform="translate(10,10)" cx="165" cy="105" r="2" fill="#106cbc"/>
                                     <circle transform="translate(10,10)" cx="196" cy="105" r="2" fill="#106cbc"/>
                                 </g>
@@ -659,7 +659,7 @@
                                     <text transform="translate(10,6)" x="41" y="61.57142857142858" fill="rgba(127, 127, 127, .8)">16</text>
                                     <text transform="translate(10,6)" x="72" y="75.14285714285714" fill="rgba(127, 127, 127, .8)">11</text>
                                     <text transform="translate(10,6)" x="103" y="10" fill="rgba(127, 127, 127, .8)">35</text>
-                                    <text transform="translate(10,6)" x="134" y="86" fill="rgba(127, 127, 127, .8)">7</text>
+                                    <text transform="translate(10,6)" x="134" y="80.57142857142857" fill="rgba(127, 127, 127, .8)">9</text>
                                     <text transform="translate(10,6)" x="165" y="105" fill="rgba(127, 127, 127, .8)"/>
                                     <text transform="translate(10,6)" x="196" y="105" fill="rgba(127, 127, 127, .8)"/>
                                 </g>
@@ -687,12 +687,6 @@
                         </h3>
                         <div class="field">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-                                <path fill-rule="evenodd" d="M7.998 14.5c2.832 0 5-1.98 5-4.5 0-1.463-.68-2.19-1.879-3.383l-.036-.037c-1.013-1.008-2.3-2.29-2.834-4.434-.322.256-.63.579-.864.953-.432.696-.621 1.58-.046 2.73.473.947.67 2.284-.278 3.232-.61.61-1.545.84-2.403.633a2.788 2.788 0 01-1.436-.874A3.21 3.21 0 003 10c0 2.53 2.164 4.5 4.998 4.5zM9.533.753C9.496.34 9.16.009 8.77.146 7.035.75 4.34 3.187 5.997 6.5c.344.689.285 1.218.003 1.5-.419.419-1.54.487-2.04-.832-.173-.454-.659-.762-1.035-.454C2.036 7.44 1.5 8.702 1.5 10c0 3.512 2.998 6 6.498 6s6.5-2.5 6.5-6c0-2.137-1.128-3.26-2.312-4.438-1.19-1.184-2.436-2.425-2.653-4.81z"/>
-                            </svg>
-                            Current streak 3 days
-                        </div>
-                        <div class="field">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
                                 <path d="M8.5.75a.75.75 0 00-1.5 0v5.19L4.391 3.33a.75.75 0 10-1.06 1.061L5.939 7H.75a.75.75 0 000 1.5h5.19l-2.61 2.609a.75.75 0 101.061 1.06L7 9.561v5.189a.75.75 0 001.5 0V9.56l2.609 2.61a.75.75 0 101.06-1.061L9.561 8.5h5.189a.75.75 0 000-1.5H9.56l2.61-2.609a.75.75 0 00-1.061-1.06L8.5 5.939V.75z"/>
                             </svg>
                             Best streak 20 days
@@ -713,7 +707,7 @@
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
                                 <path d="M10.896 2H8.75V.75a.75.75 0 00-1.5 0V2H5.104a.25.25 0 00-.177.427l2.896 2.896a.25.25 0 00.354 0l2.896-2.896A.25.25 0 0010.896 2zM8.75 15.25a.75.75 0 01-1.5 0V14H5.104a.25.25 0 01-.177-.427l2.896-2.896a.25.25 0 01.354 0l2.896 2.896a.25.25 0 01-.177.427H8.75v1.25zm-6.5-6.5a.75.75 0 000-1.5h-.5a.75.75 0 000 1.5h.5zM6 8a.75.75 0 01-.75.75h-.5a.75.75 0 010-1.5h.5A.75.75 0 016 8zm2.25.75a.75.75 0 000-1.5h-.5a.75.75 0 000 1.5h.5zM12 8a.75.75 0 01-.75.75h-.5a.75.75 0 010-1.5h.5A.75.75 0 0112 8zm2.25.75a.75.75 0 000-1.5h-.5a.75.75 0 000 1.5h.5z"/>
                             </svg>
-                            Average per day at ~5.94
+                            Average per day at ~5.92
                         </div>
                     </section>
                 </div>
@@ -2683,6 +2677,11 @@
                                 <path fill="#40c463" filter="url(#brightness1)" d="M0,1 1.7,2 1.7,2.142857142857143 0,1.1428571428571428 z"/>
                                 <path fill="#40c463" filter="url(#brightness2)" d="M1.7,2 3.4,1 3.4,1.1428571428571428 1.7,2.142857142857143 z"/>
                             </g>
+                            <g transform="translate(-8.5, 11)">
+                                <path fill="#ebedf0" d="M1.7,2 0,1 1.7,0 3.4,1 z"/>
+                                <path fill="#ebedf0" filter="url(#brightness1)" d="M0,1 1.7,2 1.7,2 0,1 z"/>
+                                <path fill="#ebedf0" filter="url(#brightness2)" d="M1.7,2 3.4,1 3.4,1 1.7,2 z"/>
+                            </g>
                         </g>
                     </g>
                 </svg>
@@ -2990,6 +2989,7 @@
                                     <rect class="day" x="0" y="34" width="11" height="11" fill="#9be9a8" rx="2" ry="2"/>
                                     <rect class="day" x="0" y="49" width="11" height="11" fill="#216e39" rx="2" ry="2"/>
                                     <rect class="day" x="0" y="64" width="11" height="11" fill="#40c463" rx="2" ry="2"/>
+                                    <rect class="day" x="0" y="79" width="11" height="11" fill="#ebedf0" rx="2" ry="2"/>
                                 </g>
                             </g>
                             <g transform="translate(0, 144)">
@@ -3958,7 +3958,7 @@
                                     </svg>
                                     <div class="name">
                                         <span>gttools/Grouch</span>
-                                        <span>starred 12 hours ago</span>
+                                        <span>starred 1 day ago</span>
                                     </div>
                                 </div>
                                 <div class="field description">An OSCAR scraper and API</div>
@@ -4011,7 +4011,7 @@
                                     </svg>
                                     <div class="name">
                                         <span>mak-kirkland/chronicler</span>
-                                        <span>starred 11 days ago</span>
+                                        <span>starred 12 days ago</span>
                                     </div>
                                 </div>
                                 <div class="field description">Chronicler is a free desktop app for note-takers, storytellers, researchers, and creative minds. It saves your notes as plain Markdown files on your computer — no subscriptions, no logins, and no internet required.</div>
@@ -4067,7 +4067,7 @@
                                         <span>starred Jun 15 2025</span>
                                     </div>
                                 </div>
-                                <div class="field description">A practical open-source guide that demystifies how U.S. universities evaluate and admit students into Computer Science PhD programs, offering insider insights and guidance for prospective applicants.</div>
+                                <div class="field description">A comprehensive open-source guide that demystifies how U.S. universities evaluate and admit students into Computer Science PhD programs.</div>
                                 <div class="field infos">
                                     <div class="language">
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
@@ -4175,55 +4175,55 @@
                                 <path class="domain" stroke="rgba(127, 127, 127, .8)" d="M10.5,0.5H460.5"/>
                                 <g class="tick" opacity="1" transform="translate(16.26923076923077,0)">
                                     <line stroke="currentColor" y2="6" stroke-opacity="0.5"/>
-                                    <text fill="rgba(127, 127, 127, .8)" y="9" dy="0.71em" transform="translate(-5,5) rotate(-45)" style="text-anchor: end;">Sat 02</text>
+                                    <text fill="rgba(127, 127, 127, .8)" y="9" dy="0.71em" transform="translate(-5,5) rotate(-45)" style="text-anchor: end;">Aug 03</text>
                                 </g>
                                 <g class="tick" opacity="1" transform="translate(50.88461538461539,0)">
                                     <line stroke="currentColor" y2="6" stroke-opacity="0.5"/>
-                                    <text fill="rgba(127, 127, 127, .8)" y="9" dy="0.71em" transform="translate(-5,5) rotate(-45)" style="text-anchor: end;">Aug 03</text>
+                                    <text fill="rgba(127, 127, 127, .8)" y="9" dy="0.71em" transform="translate(-5,5) rotate(-45)" style="text-anchor: end;">Mon 04</text>
                                 </g>
                                 <g class="tick" opacity="1" transform="translate(85.49999999999999,0)">
                                     <line stroke="currentColor" y2="6" stroke-opacity="0.5"/>
-                                    <text fill="rgba(127, 127, 127, .8)" y="9" dy="0.71em" transform="translate(-5,5) rotate(-45)" style="text-anchor: end;">Mon 04</text>
+                                    <text fill="rgba(127, 127, 127, .8)" y="9" dy="0.71em" transform="translate(-5,5) rotate(-45)" style="text-anchor: end;">Tue 05</text>
                                 </g>
                                 <g class="tick" opacity="1" transform="translate(120.11538461538461,0)">
                                     <line stroke="currentColor" y2="6" stroke-opacity="0.5"/>
-                                    <text fill="rgba(127, 127, 127, .8)" y="9" dy="0.71em" transform="translate(-5,5) rotate(-45)" style="text-anchor: end;">Tue 05</text>
+                                    <text fill="rgba(127, 127, 127, .8)" y="9" dy="0.71em" transform="translate(-5,5) rotate(-45)" style="text-anchor: end;">Wed 06</text>
                                 </g>
                                 <g class="tick" opacity="1" transform="translate(154.73076923076925,0)">
                                     <line stroke="currentColor" y2="6" stroke-opacity="0.5"/>
-                                    <text fill="rgba(127, 127, 127, .8)" y="9" dy="0.71em" transform="translate(-5,5) rotate(-45)" style="text-anchor: end;">Wed 06</text>
+                                    <text fill="rgba(127, 127, 127, .8)" y="9" dy="0.71em" transform="translate(-5,5) rotate(-45)" style="text-anchor: end;">Thu 07</text>
                                 </g>
                                 <g class="tick" opacity="1" transform="translate(189.34615384615384,0)">
                                     <line stroke="currentColor" y2="6" stroke-opacity="0.5"/>
-                                    <text fill="rgba(127, 127, 127, .8)" y="9" dy="0.71em" transform="translate(-5,5) rotate(-45)" style="text-anchor: end;">Thu 07</text>
+                                    <text fill="rgba(127, 127, 127, .8)" y="9" dy="0.71em" transform="translate(-5,5) rotate(-45)" style="text-anchor: end;">Fri 08</text>
                                 </g>
                                 <g class="tick" opacity="1" transform="translate(223.96153846153845,0)">
                                     <line stroke="currentColor" y2="6" stroke-opacity="0.5"/>
-                                    <text fill="rgba(127, 127, 127, .8)" y="9" dy="0.71em" transform="translate(-5,5) rotate(-45)" style="text-anchor: end;">Fri 08</text>
+                                    <text fill="rgba(127, 127, 127, .8)" y="9" dy="0.71em" transform="translate(-5,5) rotate(-45)" style="text-anchor: end;">Sat 09</text>
                                 </g>
                                 <g class="tick" opacity="1" transform="translate(258.5769230769231,0)">
                                     <line stroke="currentColor" y2="6" stroke-opacity="0.5"/>
-                                    <text fill="rgba(127, 127, 127, .8)" y="9" dy="0.71em" transform="translate(-5,5) rotate(-45)" style="text-anchor: end;">Sat 09</text>
+                                    <text fill="rgba(127, 127, 127, .8)" y="9" dy="0.71em" transform="translate(-5,5) rotate(-45)" style="text-anchor: end;">Aug 10</text>
                                 </g>
                                 <g class="tick" opacity="1" transform="translate(293.1923076923077,0)">
                                     <line stroke="currentColor" y2="6" stroke-opacity="0.5"/>
-                                    <text fill="rgba(127, 127, 127, .8)" y="9" dy="0.71em" transform="translate(-5,5) rotate(-45)" style="text-anchor: end;">Aug 10</text>
+                                    <text fill="rgba(127, 127, 127, .8)" y="9" dy="0.71em" transform="translate(-5,5) rotate(-45)" style="text-anchor: end;">Mon 11</text>
                                 </g>
                                 <g class="tick" opacity="1" transform="translate(327.8076923076923,0)">
                                     <line stroke="currentColor" y2="6" stroke-opacity="0.5"/>
-                                    <text fill="rgba(127, 127, 127, .8)" y="9" dy="0.71em" transform="translate(-5,5) rotate(-45)" style="text-anchor: end;">Mon 11</text>
+                                    <text fill="rgba(127, 127, 127, .8)" y="9" dy="0.71em" transform="translate(-5,5) rotate(-45)" style="text-anchor: end;">Tue 12</text>
                                 </g>
                                 <g class="tick" opacity="1" transform="translate(362.4230769230769,0)">
                                     <line stroke="currentColor" y2="6" stroke-opacity="0.5"/>
-                                    <text fill="rgba(127, 127, 127, .8)" y="9" dy="0.71em" transform="translate(-5,5) rotate(-45)" style="text-anchor: end;">Tue 12</text>
+                                    <text fill="rgba(127, 127, 127, .8)" y="9" dy="0.71em" transform="translate(-5,5) rotate(-45)" style="text-anchor: end;">Wed 13</text>
                                 </g>
                                 <g class="tick" opacity="1" transform="translate(397.0384615384615,0)">
                                     <line stroke="currentColor" y2="6" stroke-opacity="0.5"/>
-                                    <text fill="rgba(127, 127, 127, .8)" y="9" dy="0.71em" transform="translate(-5,5) rotate(-45)" style="text-anchor: end;">Wed 13</text>
+                                    <text fill="rgba(127, 127, 127, .8)" y="9" dy="0.71em" transform="translate(-5,5) rotate(-45)" style="text-anchor: end;">Thu 14</text>
                                 </g>
                                 <g class="tick" opacity="1" transform="translate(431.65384615384613,0)">
                                     <line stroke="currentColor" y2="6" stroke-opacity="0.5"/>
-                                    <text fill="rgba(127, 127, 127, .8)" y="9" dy="0.71em" transform="translate(-5,5) rotate(-45)" style="text-anchor: end;">Thu 14</text>
+                                    <text fill="rgba(127, 127, 127, .8)" y="9" dy="0.71em" transform="translate(-5,5) rotate(-45)" style="text-anchor: end;">Fri 15</text>
                                 </g>
                             </g>
                             <g transform="translate(10,10)" fill="none" font-size="10" font-family="sans-serif" text-anchor="start">
@@ -4273,55 +4273,55 @@
                                 <path class="domain" stroke="rgba(127, 127, 127, .8)" d="M10.5,0.5H460.5"/>
                                 <g class="tick" opacity="1" transform="translate(16.26923076923077,0)">
                                     <line stroke="currentColor" y2="6" stroke-opacity="0.5"/>
-                                    <text fill="rgba(127, 127, 127, .8)" y="9" dy="0.71em" transform="translate(-5,5) rotate(-45)" style="text-anchor: end;">Sat 02</text>
+                                    <text fill="rgba(127, 127, 127, .8)" y="9" dy="0.71em" transform="translate(-5,5) rotate(-45)" style="text-anchor: end;">Aug 03</text>
                                 </g>
                                 <g class="tick" opacity="1" transform="translate(50.88461538461539,0)">
                                     <line stroke="currentColor" y2="6" stroke-opacity="0.5"/>
-                                    <text fill="rgba(127, 127, 127, .8)" y="9" dy="0.71em" transform="translate(-5,5) rotate(-45)" style="text-anchor: end;">Aug 03</text>
+                                    <text fill="rgba(127, 127, 127, .8)" y="9" dy="0.71em" transform="translate(-5,5) rotate(-45)" style="text-anchor: end;">Mon 04</text>
                                 </g>
                                 <g class="tick" opacity="1" transform="translate(85.49999999999999,0)">
                                     <line stroke="currentColor" y2="6" stroke-opacity="0.5"/>
-                                    <text fill="rgba(127, 127, 127, .8)" y="9" dy="0.71em" transform="translate(-5,5) rotate(-45)" style="text-anchor: end;">Mon 04</text>
+                                    <text fill="rgba(127, 127, 127, .8)" y="9" dy="0.71em" transform="translate(-5,5) rotate(-45)" style="text-anchor: end;">Tue 05</text>
                                 </g>
                                 <g class="tick" opacity="1" transform="translate(120.11538461538461,0)">
                                     <line stroke="currentColor" y2="6" stroke-opacity="0.5"/>
-                                    <text fill="rgba(127, 127, 127, .8)" y="9" dy="0.71em" transform="translate(-5,5) rotate(-45)" style="text-anchor: end;">Tue 05</text>
+                                    <text fill="rgba(127, 127, 127, .8)" y="9" dy="0.71em" transform="translate(-5,5) rotate(-45)" style="text-anchor: end;">Wed 06</text>
                                 </g>
                                 <g class="tick" opacity="1" transform="translate(154.73076923076925,0)">
                                     <line stroke="currentColor" y2="6" stroke-opacity="0.5"/>
-                                    <text fill="rgba(127, 127, 127, .8)" y="9" dy="0.71em" transform="translate(-5,5) rotate(-45)" style="text-anchor: end;">Wed 06</text>
+                                    <text fill="rgba(127, 127, 127, .8)" y="9" dy="0.71em" transform="translate(-5,5) rotate(-45)" style="text-anchor: end;">Thu 07</text>
                                 </g>
                                 <g class="tick" opacity="1" transform="translate(189.34615384615384,0)">
                                     <line stroke="currentColor" y2="6" stroke-opacity="0.5"/>
-                                    <text fill="rgba(127, 127, 127, .8)" y="9" dy="0.71em" transform="translate(-5,5) rotate(-45)" style="text-anchor: end;">Thu 07</text>
+                                    <text fill="rgba(127, 127, 127, .8)" y="9" dy="0.71em" transform="translate(-5,5) rotate(-45)" style="text-anchor: end;">Fri 08</text>
                                 </g>
                                 <g class="tick" opacity="1" transform="translate(223.96153846153845,0)">
                                     <line stroke="currentColor" y2="6" stroke-opacity="0.5"/>
-                                    <text fill="rgba(127, 127, 127, .8)" y="9" dy="0.71em" transform="translate(-5,5) rotate(-45)" style="text-anchor: end;">Fri 08</text>
+                                    <text fill="rgba(127, 127, 127, .8)" y="9" dy="0.71em" transform="translate(-5,5) rotate(-45)" style="text-anchor: end;">Sat 09</text>
                                 </g>
                                 <g class="tick" opacity="1" transform="translate(258.5769230769231,0)">
                                     <line stroke="currentColor" y2="6" stroke-opacity="0.5"/>
-                                    <text fill="rgba(127, 127, 127, .8)" y="9" dy="0.71em" transform="translate(-5,5) rotate(-45)" style="text-anchor: end;">Sat 09</text>
+                                    <text fill="rgba(127, 127, 127, .8)" y="9" dy="0.71em" transform="translate(-5,5) rotate(-45)" style="text-anchor: end;">Aug 10</text>
                                 </g>
                                 <g class="tick" opacity="1" transform="translate(293.1923076923077,0)">
                                     <line stroke="currentColor" y2="6" stroke-opacity="0.5"/>
-                                    <text fill="rgba(127, 127, 127, .8)" y="9" dy="0.71em" transform="translate(-5,5) rotate(-45)" style="text-anchor: end;">Aug 10</text>
+                                    <text fill="rgba(127, 127, 127, .8)" y="9" dy="0.71em" transform="translate(-5,5) rotate(-45)" style="text-anchor: end;">Mon 11</text>
                                 </g>
                                 <g class="tick" opacity="1" transform="translate(327.8076923076923,0)">
                                     <line stroke="currentColor" y2="6" stroke-opacity="0.5"/>
-                                    <text fill="rgba(127, 127, 127, .8)" y="9" dy="0.71em" transform="translate(-5,5) rotate(-45)" style="text-anchor: end;">Mon 11</text>
+                                    <text fill="rgba(127, 127, 127, .8)" y="9" dy="0.71em" transform="translate(-5,5) rotate(-45)" style="text-anchor: end;">Tue 12</text>
                                 </g>
                                 <g class="tick" opacity="1" transform="translate(362.4230769230769,0)">
                                     <line stroke="currentColor" y2="6" stroke-opacity="0.5"/>
-                                    <text fill="rgba(127, 127, 127, .8)" y="9" dy="0.71em" transform="translate(-5,5) rotate(-45)" style="text-anchor: end;">Tue 12</text>
+                                    <text fill="rgba(127, 127, 127, .8)" y="9" dy="0.71em" transform="translate(-5,5) rotate(-45)" style="text-anchor: end;">Wed 13</text>
                                 </g>
                                 <g class="tick" opacity="1" transform="translate(397.0384615384615,0)">
                                     <line stroke="currentColor" y2="6" stroke-opacity="0.5"/>
-                                    <text fill="rgba(127, 127, 127, .8)" y="9" dy="0.71em" transform="translate(-5,5) rotate(-45)" style="text-anchor: end;">Wed 13</text>
+                                    <text fill="rgba(127, 127, 127, .8)" y="9" dy="0.71em" transform="translate(-5,5) rotate(-45)" style="text-anchor: end;">Thu 14</text>
                                 </g>
                                 <g class="tick" opacity="1" transform="translate(431.65384615384613,0)">
                                     <line stroke="currentColor" y2="6" stroke-opacity="0.5"/>
-                                    <text fill="rgba(127, 127, 127, .8)" y="9" dy="0.71em" transform="translate(-5,5) rotate(-45)" style="text-anchor: end;">Thu 14</text>
+                                    <text fill="rgba(127, 127, 127, .8)" y="9" dy="0.71em" transform="translate(-5,5) rotate(-45)" style="text-anchor: end;">Fri 15</text>
                                 </g>
                             </g>
                             <g transform="translate(10,10)" fill="none" font-size="10" font-family="sans-serif" text-anchor="start">
@@ -4434,6 +4434,59 @@
                                     </svg>
                                     <div class="content">
                                         Pushed 1 commit in
+                                        <span class="repo">renatodellosso/dev-takehome-spr25</span>
+                                    </div>
+                                </div>
+                                <div class="details">
+                                    <div>on branch <span class="code">master</span></div>
+                                    <div class="commit">
+                                        <div class="sha">#8f4a756</div>
+                                        <div class="message">Add npm run start, expand testing notes</div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                        <div class="row fill-width">
+                            <section class="activity">
+                                <div class="field">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+                                        <path fill-rule="evenodd" d="M10.5 7.75a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0zm1.43.75a4.002 4.002 0 01-7.86 0H.75a.75.75 0 110-1.5h3.32a4.001 4.001 0 017.86 0h3.32a.75.75 0 110 1.5h-3.32z"/>
+                                    </svg>
+                                    <div class="content">
+                                        Pushed 1 commit in
+                                        <span class="repo">renatodellosso/dev-takehome-spr25</span>
+                                    </div>
+                                </div>
+                                <div class="details">
+                                    <div>on branch <span class="code">master</span></div>
+                                    <div class="commit">
+                                        <div class="sha">#3d6a7bb</div>
+                                        <div class="message">Allow running tests without a .env file</div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                        <div class="row fill-width">
+                            <section class="activity">
+                                <div class="field">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+                                        <path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z"/>
+                                    </svg>
+                                    <div class="content">
+                                        Starred
+                                        <span class="repo">gttools/Grouch</span>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                        <div class="row fill-width">
+                            <section class="activity">
+                                <div class="field">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+                                        <path fill-rule="evenodd" d="M10.5 7.75a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0zm1.43.75a4.002 4.002 0 01-7.86 0H.75a.75.75 0 110-1.5h3.32a4.001 4.001 0 017.86 0h3.32a.75.75 0 110 1.5h-3.32z"/>
+                                    </svg>
+                                    <div class="content">
+                                        Pushed 1 commit in
                                         <span class="repo">renatodellosso/renatodellosso</span>
                                     </div>
                                 </div>
@@ -4461,66 +4514,6 @@
                                     <div>on branch <span class="code">master</span></div>
                                     <div class="commit">
                                         <div class="sha">#f830cee</div>
-                                        <div class="message">Update readme.md</div>
-                                    </div>
-                                </div>
-                            </section>
-                        </div>
-                        <div class="row fill-width">
-                            <section class="activity">
-                                <div class="field">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-                                        <path fill-rule="evenodd" d="M10.5 7.75a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0zm1.43.75a4.002 4.002 0 01-7.86 0H.75a.75.75 0 110-1.5h3.32a4.001 4.001 0 017.86 0h3.32a.75.75 0 110 1.5h-3.32z"/>
-                                    </svg>
-                                    <div class="content">
-                                        Pushed 1 commit in
-                                        <span class="repo">renatodellosso/renatodellosso</span>
-                                    </div>
-                                </div>
-                                <div class="details">
-                                    <div>on branch <span class="code">master</span></div>
-                                    <div class="commit">
-                                        <div class="sha">#41549f5</div>
-                                        <div class="message">Update readme.md</div>
-                                    </div>
-                                </div>
-                            </section>
-                        </div>
-                        <div class="row fill-width">
-                            <section class="activity">
-                                <div class="field">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-                                        <path fill-rule="evenodd" d="M10.5 7.75a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0zm1.43.75a4.002 4.002 0 01-7.86 0H.75a.75.75 0 110-1.5h3.32a4.001 4.001 0 017.86 0h3.32a.75.75 0 110 1.5h-3.32z"/>
-                                    </svg>
-                                    <div class="content">
-                                        Pushed 1 commit in
-                                        <span class="repo">renatodellosso/renatodellosso</span>
-                                    </div>
-                                </div>
-                                <div class="details">
-                                    <div>on branch <span class="code">master</span></div>
-                                    <div class="commit">
-                                        <div class="sha">#7140da2</div>
-                                        <div class="message">Update readme.md</div>
-                                    </div>
-                                </div>
-                            </section>
-                        </div>
-                        <div class="row fill-width">
-                            <section class="activity">
-                                <div class="field">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-                                        <path fill-rule="evenodd" d="M10.5 7.75a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0zm1.43.75a4.002 4.002 0 01-7.86 0H.75a.75.75 0 110-1.5h3.32a4.001 4.001 0 017.86 0h3.32a.75.75 0 110 1.5h-3.32z"/>
-                                    </svg>
-                                    <div class="content">
-                                        Pushed 1 commit in
-                                        <span class="repo">renatodellosso/renatodellosso</span>
-                                    </div>
-                                </div>
-                                <div class="details">
-                                    <div>on branch <span class="code">master</span></div>
-                                    <div class="commit">
-                                        <div class="sha">#b9e2ce5</div>
                                         <div class="message">Update readme.md</div>
                                     </div>
                                 </div>
@@ -4600,7 +4593,7 @@
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
                                 <path fill-rule="evenodd" d="M1.5 8a6.5 6.5 0 1113 0 6.5 6.5 0 01-13 0zM8 0a8 8 0 100 16A8 8 0 008 0zm.5 4.75a.75.75 0 00-1.5 0v3.5a.75.75 0 00.471.696l2.5 1a.75.75 0 00.557-1.392L8.5 7.742V4.75z"/>
                             </svg>
-                            On 13 Aug 2025, 17:45:45
+                            On 13 Aug 2025, 17:47:37
                         </div>
                     </section>
                 </div>
@@ -4616,11 +4609,11 @@
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
                                 <path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"/>
                             </svg>
-                            <span class="code">76a8bad5</span>
+                            <span class="code">41549f56</span>
                             <span class="code">readme.md</span>
                             <span class="code">
-                                <span class="snippet additions">++2</span>
-                                <span class="snippet deletions">--2</span>
+                                <span class="snippet additions">++1</span>
+                                <span class="snippet deletions">--1</span>
                             </span>
                         </div>
                     </section>
@@ -4628,7 +4621,7 @@
                 <div class="row">
                     <section class="snippet">
                         <div class="body markdown">
-                            <code class="language-diff" xml:space="preserve"><span class="token coord">@@ -1,8 +1,8 @@</span><br /><span class="token unchanged"><span class="token prefix unchanged">·</span><span class="token line">[![Renato's GitHub stats](https://github-readme-stats.vercel.app/api?username=renatodellosso&amp;theme=synthwave&amp;count_private=true)](https://github.com/anuraghazra/github-readme-stats)<br /></span><span class="token prefix unchanged">·</span><span class="token line">&lt;!-- [![Top Langs (Excluding C++)](https://github-readme-stats.vercel.app/api/top-langs/?username=renatodellosso&amp;theme=synthwave&amp;langs_count=10&amp;hide=c,c%2B%2B,cmake&amp;layout=compact))](https://github.com/anuraghazra/github-readme-stats)<br /></span><span class="token prefix unchanged">·</span><span class="token line">[![Renato's wakatime stats](https://github-readme-stats.vercel.app/api/wakatime?username=Rgamer43&amp;theme=synthwave)](https://github.com/anuraghazra/github-readme-stats) --&gt;<br /></span></span><span class="token deleted-sign deleted"><span class="token prefix deleted">-</span><span class="token line">[![Rgamer43's StackOverflow](https://stackoverflow.com/users/flair/22099600.png)](https://stackoverflow.com/users/22099600/rgamer43)<br /></span><span class="token prefix deleted">-</span><span class="token line">[![wakatime](https://wakatime.com/badge/user/b0f476bc-3154-4677-91c4-ac720571e2b4.svg)](https://wakatime.com/@b0f476bc-3154-4677-91c4-ac720571e2b4)<br /></span></span><span class="token inserted-sign inserted"><span class="token prefix inserted">+</span><span class="token line">StackOverflow: [![Rgamer43's StackOverflow](https://stackoverflow.com/users/flair/22099600.png)](https://stackoverflow.com/users/22099600/rgamer43)&lt;br/&gt;<br /></span><span class="token prefix inserted">+</span><span class="token line">Coding Time: [![wakatime](https://wakatime.com/badge/user/b0f476bc-3154-4677-91c4-ac720571e2b4.svg)](https://wakatime.com/@b0f476bc-3154-4677-91c4-ac720571e2b4)<br /></span></span><span class="token unchanged"><span class="token prefix unchanged">·</span><span class="token line">&lt;br&gt;**Recent Coding Activity**<br /></span><span class="token prefix unchanged">·</span><span class="token line">&lt;!--START_SECTION:waka--&gt;<br /></span><span class="token prefix unchanged">·</span></span></code>
+                            <code class="language-diff" xml:space="preserve"><span class="token coord">@@ -1,7 +1,7 @@</span><br /><span class="token unchanged"><span class="token prefix unchanged">·</span><span class="token line">[![Renato's GitHub stats](https://github-readme-stats.vercel.app/api?username=renatodellosso&amp;theme=synthwave&amp;count_private=true)](https://github.com/anuraghazra/github-readme-stats)<br /></span><span class="token prefix unchanged">·</span><span class="token line">&lt;!-- [![Top Langs (Excluding C++)](https://github-readme-stats.vercel.app/api/top-langs/?username=renatodellosso&amp;theme=synthwave&amp;langs_count=10&amp;hide=c,c%2B%2B,cmake&amp;layout=compact))](https://github.com/anuraghazra/github-readme-stats)<br /></span><span class="token prefix unchanged">·</span><span class="token line">[![Renato's wakatime stats](https://github-readme-stats.vercel.app/api/wakatime?username=Rgamer43&amp;theme=synthwave)](https://github.com/anuraghazra/github-readme-stats) --&gt;<br /></span></span><span class="token deleted-sign deleted"><span class="token prefix deleted">-</span><span class="token line">**StackOverflow**&lt;br&gt;<br /></span></span><span class="token inserted-sign inserted"><span class="token prefix inserted">+</span><span class="token line">**Stack Overflow**&lt;br&gt;<br /></span></span><span class="token unchanged"><span class="token prefix unchanged">·</span><span class="token line">[![Rgamer43's StackOverflow](https://stackoverflow.com/users/flair/22099600.png)](https://stackoverflow.com/users/22099600/rgamer43)&lt;br&gt;<br /></span><span class="token prefix unchanged">·</span><span class="token line">**Coding Time**&lt;br&gt;<br /></span><span class="token prefix unchanged">·</span><span class="token line">[![wakatime](https://wakatime.com/badge/user/b0f476bc-3154-4677-91c4-ac720571e2b4.svg)](https://wakatime.com/@b0f476bc-3154-4677-91c4-ac720571e2b4)&lt;br&gt;</span></span></code>
                         </div>
                     </section>
                 </div>
@@ -4643,14 +4636,14 @@
                 <div class="row">
                     <section class="largeable-column-fields">
                         <div class="field" style="padding-left: 31px">
-                            <b style="color: #7FEC11">Your fortune: Bad Luck</b>
+                            <b style="color: #00CBB0">Your fortune: ｷﾀ━━━━━━(ﾟ∀ﾟ)━━━━━━ !!!!</b>
                         </div>
                     </section>
                 </div>
             </section>
             <footer>
                 <span>These metrics include private contributions</span>
-                <span>Last updated 15 Aug 2025, 04:18:30 (timezone America/New_York) with lowlighter/metrics@3.34.0</span>
+                <span>Last updated 16 Aug 2025, 04:16:38 (timezone America/New_York) with lowlighter/metrics@3.34.0</span>
             </footer>
         </div>
         <div xmlns="http://www.w3.org/1999/xhtml" id="metrics-end"></div>

@@ -1,6 +1,3 @@
-[![Renato's GitHub stats](https://github-readme-stats.vercel.app/api?username=renatodellosso&theme=synthwave&count_private=true)](https://github.com/anuraghazra/github-readme-stats)
-<!-- [![Top Langs (Excluding C++)](https://github-readme-stats.vercel.app/api/top-langs/?username=renatodellosso&theme=synthwave&langs_count=10&hide=c,c%2B%2B,cmake&layout=compact))](https://github.com/anuraghazra/github-readme-stats)
-[![Renato's wakatime stats](https://github-readme-stats.vercel.app/api/wakatime?username=Rgamer43&theme=synthwave)](https://github.com/anuraghazra/github-readme-stats) -->
 **Stack Overflow**<br>
 [![Rgamer43's StackOverflow](https://stackoverflow.com/users/flair/22099600.png)](https://stackoverflow.com/users/22099600/rgamer43)<br>
 **Coding Time**<br>

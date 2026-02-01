@@ -5,16 +5,7 @@
 [![Rgamer43's StackOverflow](https://stackoverflow.com/users/flair/22099600.png)](https://stackoverflow.com/users/22099600/rgamer43)<br>
 **Coding Time**<br>
 [![wakatime](https://wakatime.com/badge/user/b0f476bc-3154-4677-91c4-ac720571e2b4.svg)](https://wakatime.com/@b0f476bc-3154-4677-91c4-ac720571e2b4)<br>
-**Recent Coding Activity**
-<!--START_SECTION:waka-->
 
-```txt
-TypeScript   6 hrs 5 mins    ██████████████░░░░░░░░░░░   55.79 %
-C            3 hrs 48 mins   ████████▓░░░░░░░░░░░░░░░░   34.93 %
-Markdown     23 mins         █░░░░░░░░░░░░░░░░░░░░░░░░   03.59 %
-Other        12 mins         ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.83 %
-JavaScript   11 mins         ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.79 %
-```
 
 **Work Experience**
 - Software Engineer Intern @ Orderly Wellness (June 2024 - August 2025)

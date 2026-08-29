@@ -7,6 +7,7 @@ Hey, I'm Renato! I'm studying Computer Science at Georgia Tech, concentrating in
 
 
 **Work Experience**
+- Software Engineer Intern @ Tesla (August 2026 - December 2026)
 - Software Engineer Intern @ Orderly Wellness (June 2024 - August 2025)
 
 **See more on my [LinkedIn](https://www.linkedin.com/in/renatodellosso/)**
